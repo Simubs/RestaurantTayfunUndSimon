@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant"
         mc:Ignorable="d"
-        Title="Startseite" Height="477" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Startseite" Height="477" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Bilder\Restaurant-Logo.png">
     <Grid>
         <Grid Margin="0,0,0,10">
             <Image x:Name="BildVorspeise" HorizontalAlignment="Left" Height="217" VerticalAlignment="Top" Width="400" Source="/Bilder/VorspeiseBild.jpg" Stretch="Fill" Margin="0,22,0,0"/>

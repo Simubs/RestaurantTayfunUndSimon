@@ -124,5 +124,8 @@
   <ItemGroup>
     <Folder Include="Datenbank\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Bilder\Restaurant-Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

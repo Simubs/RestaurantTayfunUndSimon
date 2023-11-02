@@ -1,6 +1,7 @@
 ﻿using Restaurant.Entitys;
 using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,13 @@ namespace Restaurant
     /// </summary>
     public partial class LogInMitarbeiter : Window
     {
+        String connectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\Entwicklung\\ScheisVSProjekte\\Restaurant\\Restaurant\\Datenbank\\Restaurant-Datenbank.accdb";
+        OleDbConnection dataConnection;
         Startseite vorgaengerFenster;
         public LogInMitarbeiter(Startseite vorgaengerFenster)
         {
             InitializeComponent();
+            dataConnection = new OleDbConnection(connectionString);
             this.vorgaengerFenster = vorgaengerFenster;
         }
 
@@ -49,10 +53,45 @@ namespace Restaurant
 
         private Mitarbeiter findeMitarbeiter(String mitarbeiternummer, String passwort)
         {
+            Mitarbeiter gefundenerMitarbeiter = null;
+            try
+            {
+                dataConnection.Open();
+
+                OleDbCommand command = dataConnection.CreateCommand();
+                command.Connection = dataConnection;
+                command.CommandText = "SELECT COUNT(*) FROM PERSONALLOGIN WHERE MITARBEITERNR = '" + mitarbeiternummer + "' AND PASSWORT = '" + passwort + "';";
+
+                OleDbDataReader reader = command.ExecuteReader();
+
+                reader.Read();
+                if(reader.GetInt32(0) == 0)
+                {
+                    return null;
+                }
+                reader.Close();
+
+                command.CommandText = "SELECT PERSONAL_NR,VORNAME,NACHNAME,TAETIGKEITSBEREICH FROM PERSONAL WHERE PERSONAL_NR = " + mitarbeiternummer + ";";
+
+                OleDbDataReader readerPersonal = command.ExecuteReader();
+
+                while (readerPersonal.Read())
+                {
+                    gefundenerMitarbeiter = new Mitarbeiter(readerPersonal.GetInt32(0), readerPersonal.GetString(1),readerPersonal.GetString(2),readerPersonal.GetInt32(3));
+                }
+
+                readerPersonal.Close();
+                dataConnection.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            
 
 
-
-            return new Mitarbeiter(1,"Simon","Grewe",1);
+            return gefundenerMitarbeiter;
         }
 
         private void clickZurueckButton(object sender, RoutedEventArgs e)
