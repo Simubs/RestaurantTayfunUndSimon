@@ -86,7 +86,7 @@ namespace Restaurant
                 while (reader.Read())
                 {
                     Console.WriteLine(reader.GetInt32(0));
-                    Console.WriteLine(reader.GetString(1));
+                    Console.WriteLine(reader.GetInt32(1));
                     Console.WriteLine(reader.GetInt32(2));
                     tische.Add(reader.GetInt32(0), new Tisch(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2)));
 

@@ -52,7 +52,7 @@ namespace Restaurant
 
 
 
-            return new Mitarbeiter("1","Simon","Grewe",1);
+            return new Mitarbeiter(1,"Simon","Grewe",1);
         }
 
         private void clickZurueckButton(object sender, RoutedEventArgs e)

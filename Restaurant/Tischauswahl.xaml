@@ -9,58 +9,31 @@
     <Grid Margin="0,0,0,2">
         <Button x:Name="LogOutButton" Content="LogOut" HorizontalAlignment="Left" Height="32" Margin="779,10,0,0" VerticalAlignment="Top" Width="122" Click="clickLogOutButton"/>
         <Rectangle HorizontalAlignment="Left" Height="433" Margin="18,63,0,0" Stroke="Black" VerticalAlignment="Top" Width="747"/>
-        <Button x:Name="Tisch1" Content="Tisch 1" HorizontalAlignment="Left" Height="55" Margin="32,77,0,0" VerticalAlignment="Top" Width="38" Click="Tisch1_Click"/>
-        <Button x:Name="Tisch2" Content="Tisch 2" HorizontalAlignment="Left" Height="90" Margin="119,76,0,0" VerticalAlignment="Top" Width="62" Click="Tisch2_Click"/>
-        <Button x:Name="Tisch3" Content="Tisch 3" HorizontalAlignment="Left" Height="45" Margin="241,94,0,0" VerticalAlignment="Top" Width="86" Click="Tisch3_Click"/>
-        <Button x:Name="Tisch4" Content="Tisch 4" HorizontalAlignment="Left" Height="55" Margin="364,95,0,0" VerticalAlignment="Top" Width="92" Click="Tisch4_Click"/>
-        <Button x:Name="Tisch5" Content="Tisch 5" HorizontalAlignment="Left" Height="46" Margin="520,98,0,0" VerticalAlignment="Top" Width="107" Click="Tisch5_Click"/>
-        <Button x:Name="Tisch6" Content="Tisch 6" HorizontalAlignment="Left" Height="97" Margin="690,79,0,0" VerticalAlignment="Top" Width="55" Click="Tisch6_Click"/>
-        <Button x:Name="Tisch7" Content="Tisch 7" HorizontalAlignment="Left" Height="90" Margin="32,193,0,0" VerticalAlignment="Top" Width="62" Click="Tisch7_Click"/>
-        <Button x:Name="Tisch8" Content="Tisch 8" HorizontalAlignment="Left" Height="54" Margin="131,216,0,0" VerticalAlignment="Top" Click="Tisch8_Click"/>
-        <Button x:Name="Tisch9" Content="Tisch 9" HorizontalAlignment="Left" Height="46" Margin="213,220,0,0" VerticalAlignment="Top" Width="107" Click="Tisch9_Click"/>
-        <Button x:Name="Tisch11" Content="Tisch 11" HorizontalAlignment="Left" Height="55" Margin="449,211,0,0" VerticalAlignment="Top" Click="Tisch11_Click"/>
-        <Button x:Name="Tisch12" Content="Tisch 12" HorizontalAlignment="Left" Height="97" Margin="572,179,0,0" VerticalAlignment="Top" Click="Tisch12_Click"/>
-        <Button x:Name="Tisch17" Content="Tisch 17" HorizontalAlignment="Left" Height="90" Margin="344,309,0,0" VerticalAlignment="Top" Width="132" Click="Tisch17_Click"/>
-        <Button x:Name="Tisch18" Content="Tisch 18" HorizontalAlignment="Left" Height="55" Margin="527,319,0,0" VerticalAlignment="Top" Click="Tisch18_Click"/>
-        <Button x:Name="Tisch16" Content="Tisch 16" HorizontalAlignment="Left" Height="46" Margin="204,342,0,0" VerticalAlignment="Top" Width="107" Click="Tisch16_Click"/>
-        <Button x:Name="Tisch15" Content="Tisch 15" HorizontalAlignment="Left" Height="54" Margin="119,305,0,0" VerticalAlignment="Top" Click="Tisch15_Click"/>
-        <Button x:Name="Tisch14" Content="Tisch 14" HorizontalAlignment="Left" Height="90" Margin="32,319,0,0" VerticalAlignment="Top" Width="62" Click="Tisch14_Click"/>
-        <Button x:Name="Tisch19" Content="Tisch 19" HorizontalAlignment="Left" Height="97" Margin="610,293,0,0" VerticalAlignment="Top" Width="55" Click="Tisch19_Click"/>
-        <Button x:Name="Tisch20" Content="Tisch 20" HorizontalAlignment="Left" Height="54" Margin="694,320,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Background="#FFDDDDDD" Click="Tisch20_Click">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.05"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button x:Name="Tisch21" Content="Tisch 21" HorizontalAlignment="Left" Height="63" Margin="50,433,0,0" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.5,0.5" Click="Tisch21_Click">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.56"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button x:Name="Tisch22" Content="Tisch 22" HorizontalAlignment="Left" Height="54" Margin="150,442,0,0" VerticalAlignment="Top" Width="79" Click="Tisch22_Click"/>
-        <Button x:Name="Tisch23" Content="Tisch 23" HorizontalAlignment="Left" Height="65" Margin="344,428,0,0" VerticalAlignment="Top" Width="59" Click="Tisch23_Click"/>
-        <Button x:Name="Tisch24" Content="Tisch 24" HorizontalAlignment="Left" Height="54" Margin="456,438,0,0" VerticalAlignment="Top" Width="118" Click="Tisch24_Click"/>
-        <Button x:Name="Tisch13" Content="Tisch 13" HorizontalAlignment="Left" Height="54" Margin="690,211,0,0" VerticalAlignment="Top" Click="Tisch13_Click"/>
-        <Button x:Name="Tisch10" Content="Tisch 10" HorizontalAlignment="Left" Height="54" Margin="364,216,0,0" VerticalAlignment="Top" Click="Tisch10_Click"/>
-        <Button x:Name="Tisch25" Content="Tisch 25" HorizontalAlignment="Left" Height="54" Margin="627,436,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Background="#FFDDDDDD" Click="Tisch25_Click">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.05"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
+        <Button x:Name="Tisch1" Content="Tisch 1" HorizontalAlignment="Left" Height="55" Margin="32,77,0,0" VerticalAlignment="Top" Width="38" Click="Tisch1_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch2" Content="Tisch 2" HorizontalAlignment="Left" Height="90" Margin="119,76,0,0" VerticalAlignment="Top" Width="62" Click="Tisch2_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch3" Content="Tisch 3" HorizontalAlignment="Left" Height="45" Margin="241,94,0,0" VerticalAlignment="Top" Width="86" Click="Tisch3_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch4" Content="Tisch 4" HorizontalAlignment="Left" Height="55" Margin="364,95,0,0" VerticalAlignment="Top" Width="92" Click="Tisch4_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch5" Content="Tisch 5" HorizontalAlignment="Left" Height="46" Margin="520,98,0,0" VerticalAlignment="Top" Width="107" Click="Tisch5_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch6" Content="Tisch 6" HorizontalAlignment="Left" Height="97" Margin="690,79,0,0" VerticalAlignment="Top" Width="55" Click="Tisch6_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch7" Content="Tisch 7" HorizontalAlignment="Left" Height="90" Margin="32,193,0,0" VerticalAlignment="Top" Width="62" Click="Tisch7_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch8" Content="Tisch 8" HorizontalAlignment="Left" Height="54" Margin="131,216,0,0" VerticalAlignment="Top" Click="Tisch8_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch9" Content="Tisch 9" HorizontalAlignment="Left" Height="46" Margin="213,220,0,0" VerticalAlignment="Top" Width="107" Click="Tisch9_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch11" Content="Tisch 11" HorizontalAlignment="Left" Height="55" Margin="449,211,0,0" VerticalAlignment="Top" Click="Tisch11_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch12" Content="Tisch 12" HorizontalAlignment="Left" Height="97" Margin="572,179,0,0" VerticalAlignment="Top" Click="Tisch12_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch17" Content="Tisch 17" HorizontalAlignment="Left" Height="90" Margin="344,309,0,0" VerticalAlignment="Top" Width="132" Click="Tisch17_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch18" Content="Tisch 18" HorizontalAlignment="Left" Height="55" Margin="527,319,0,0" VerticalAlignment="Top" Click="Tisch18_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch16" Content="Tisch 16" HorizontalAlignment="Left" Height="46" Margin="204,342,0,0" VerticalAlignment="Top" Width="107" Click="Tisch16_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch15" Content="Tisch 15" HorizontalAlignment="Left" Height="54" Margin="119,305,0,0" VerticalAlignment="Top" Click="Tisch15_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch14" Content="Tisch 14" HorizontalAlignment="Left" Height="90" Margin="32,319,0,0" VerticalAlignment="Top" Width="62" Click="Tisch14_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch19" Content="Tisch 19" HorizontalAlignment="Left" Height="97" Margin="610,293,0,0" VerticalAlignment="Top" Width="55" Click="Tisch19_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch20" Content="Tisch 20" HorizontalAlignment="Left" Height="54" Margin="694,320,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Background="#FF8FFF68" Click="Tisch20_Click"/>
+        <Button x:Name="Tisch21" Content="Tisch 21" HorizontalAlignment="Left" Height="63" Margin="50,433,0,0" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.5,0.5" Click="Tisch21_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch22" Content="Tisch 22" HorizontalAlignment="Left" Height="54" Margin="150,442,0,0" VerticalAlignment="Top" Width="79" Click="Tisch22_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch23" Content="Tisch 23" HorizontalAlignment="Left" Height="65" Margin="344,428,0,0" VerticalAlignment="Top" Width="59" Click="Tisch23_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch24" Content="Tisch 24" HorizontalAlignment="Left" Height="54" Margin="456,438,0,0" VerticalAlignment="Top" Width="118" Click="Tisch24_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch13" Content="Tisch 13" HorizontalAlignment="Left" Height="54" Margin="690,211,0,0" VerticalAlignment="Top" Click="Tisch13_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch10" Content="Tisch 10" HorizontalAlignment="Left" Height="54" Margin="364,216,0,0" VerticalAlignment="Top" Click="Tisch10_Click" Background="#FF8FFF68"/>
+        <Button x:Name="Tisch25" Content="Tisch 25" HorizontalAlignment="Left" Height="54" Margin="627,436,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Background="#FF8FFF68" Click="Tisch25_Click"/>
         <ComboBox x:Name="Tischauswahl1" HorizontalAlignment="Left" Height="22" Margin="770,293,0,0" VerticalAlignment="Top" Width="131" DataContextChanged="aenderungTischAuswahl"/>
         <Button x:Name="TischauswahlButton" Content="Tisch auswählen" HorizontalAlignment="Left" Height="134" Margin="773,347,0,0" VerticalAlignment="Top" Width="128" Click="TischauswahlButton_Click"/>
         <TextBox HorizontalAlignment="Left" Height="61" Margin="780,215,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="103" IsEnabled="False" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>

@@ -9,7 +9,7 @@ namespace Restaurant.Entitys
     public class Mitarbeiter
     {
 
-        public Mitarbeiter(String mitarbeiternummer, String vorname, String nachname, int taetigkeitsbereich) {
+        public Mitarbeiter(int mitarbeiternummer, String vorname, String nachname, int taetigkeitsbereich) {
             this.mitarbeiternummer = mitarbeiternummer;
             this.vorname = vorname; 
             this.nachname = nachname;

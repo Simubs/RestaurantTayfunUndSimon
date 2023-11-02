@@ -8,7 +8,7 @@ namespace Restaurant.Entitys
 {
     public class Tisch
     {
-        public Tisch(int tischNr, string mitarbeiternummer, int sitzplaetze)
+        public Tisch(int tischNr, int mitarbeiternummer, int sitzplaetze)
         {
             this.tischNr = tischNr;
             this.mitarbeiternummer = mitarbeiternummer;
