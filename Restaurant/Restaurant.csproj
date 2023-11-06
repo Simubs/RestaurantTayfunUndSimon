@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BestellFenster.xaml.cs">
+      <DependentUpon>BestellFenster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Entitys\Bestelllung.cs" />
+    <Compile Include="Entitys\BestellungElem.cs" />
+    <Compile Include="Entitys\KartenElement.cs" />
     <Compile Include="Entitys\Mitarbeiter.cs" />
     <Compile Include="Entitys\Tisch.cs" />
     <Compile Include="LogInMitarbeiter.xaml.cs">
@@ -70,6 +76,10 @@
     <Compile Include="Tischauswahl.xaml.cs">
       <DependentUpon>Tischauswahl.xaml</DependentUpon>
     </Compile>
+    <Page Include="BestellFenster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LogInMitarbeiter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

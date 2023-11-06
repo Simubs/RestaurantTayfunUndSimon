@@ -67,6 +67,8 @@ namespace Restaurant
                 reader.Read();
                 if(reader.GetInt32(0) == 0)
                 {
+                    reader.Close();
+                    dataConnection.Close();
                     return null;
                 }
                 reader.Close();
