@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Restaurant.Entitys
+﻿namespace Restaurant.Entitys
 {
     public class KartenElement
     {
+        public int KartenElementNr { get; set; }
+
+        public double Preis { get; set; }
+
+        public int ElementArtNr { get; set; }
+
     }
 }

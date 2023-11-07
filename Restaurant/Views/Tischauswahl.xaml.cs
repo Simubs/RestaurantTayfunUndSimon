@@ -26,7 +26,7 @@ namespace Restaurant
         private Mitarbeiter eingelogterMitarbeiter;
         private Tisch ausgewaelterTisch;
         private Hashtable tische = new Hashtable();
-        String connectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + RunConfigurationVariables.PATH_TO_DATABASE_DYNAMIC;
+        String connectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\Entwicklung\\ScheisVSProjekte\\Restaurant\\Restaurant\\Datenbank\\Restaurant-Datenbank.accdb";
         OleDbConnection dataConnection;
 
 
@@ -97,7 +97,9 @@ namespace Restaurant
 
                 while (reader.Read())
                 {
-                    
+                    Console.WriteLine(reader.GetInt32(0));
+                    Console.WriteLine(reader.GetInt32(1));
+                    Console.WriteLine(reader.GetInt32(2));
                     tische.Add(reader.GetInt32(0), new Tisch(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2)));
 
                 }
