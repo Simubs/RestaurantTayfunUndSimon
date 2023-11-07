@@ -21,7 +21,7 @@ namespace Restaurant
     /// </summary>
     public partial class LogInMitarbeiter : Window
     {
-        String connectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + RunConfigurationVariables.PATH_TO_DATABASE_DYNAMIC;
+        String connectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\Entwicklung\\ScheisVSProjekte\\Restaurant\\Restaurant\\Datenbank\\Restaurant-Datenbank.accdb";
         OleDbConnection dataConnection;
         Startseite vorgaengerFenster;
         public LogInMitarbeiter(Startseite vorgaengerFenster)

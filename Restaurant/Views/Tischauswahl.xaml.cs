@@ -26,7 +26,7 @@ namespace Restaurant
         private Mitarbeiter eingelogterMitarbeiter;
         private Tisch ausgewaelterTisch;
         private Hashtable tische = new Hashtable();
-        String connectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + RunConfigurationVariables.PATH_TO_DATABASE_DYNAMIC;
+        String connectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\Entwicklung\\ScheisVSProjekte\\Restaurant\\Restaurant\\Datenbank\\Restaurant-Datenbank.accdb";
         OleDbConnection dataConnection;
 
 
