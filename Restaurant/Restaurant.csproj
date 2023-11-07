@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entitys\Bestellung.cs" />
+    <Compile Include="Entitys\KartenElement.cs" />
     <Compile Include="Entitys\Mitarbeiter.cs" />
     <Compile Include="Entitys\Tisch.cs" />
     <Compile Include="LogInMitarbeiter.xaml.cs">
