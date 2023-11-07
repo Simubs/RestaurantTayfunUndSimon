@@ -10,7 +10,7 @@ namespace Restaurant.Services
     class RechnungErsteller
     {
 
-        public Rechnung ErstelleRechnung(Bestellung bestellung, double trinkgeld, int personalNummer)
+        public static Rechnung ErstelleRechnung(Bestellung bestellung, double trinkgeld, int personalNummer)
         {
             Rechnung ZuErstellendeRechnung = new Rechnung();
             ZuErstellendeRechnung.RechnungNr = System.Guid.NewGuid().ToString();
