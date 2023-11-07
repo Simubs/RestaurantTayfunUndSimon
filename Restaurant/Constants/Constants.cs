@@ -11,5 +11,7 @@ namespace Restaurant.Constants
     {
         public static readonly Brush DEFAULT_BACKGROUND_COLOR = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4545F5"));
         public static readonly string DEFAULT_BACKGROUND_COLOR_AS_STRING = "#FF4545F5";
+
+        public const string FALSCHE_EINGABEN_FEHLERMELDUNG = "Bitte überprüfen Sie Ihre Eingaben.";
     }
 }

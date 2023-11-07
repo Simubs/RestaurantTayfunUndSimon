@@ -38,14 +38,14 @@ namespace Restaurant
                 ByPassLoginButton.VerticalAlignment = VerticalAlignment.Bottom;
                 MainGrid.Children.Add(ByPassLoginButton);
 
-                //this.StackPa .AddChild(ByPassLoginButton);
 
             }
         }
 
         private void ByPassButtonClicked(object sender, RoutedEventArgs e)
         {
-            goToTischAuswahl(findeMitarbeiter("1","test"));
+            Mitarbeiter gefundenerMitarbeiter = findeMitarbeiter("1", "test");
+            goToTischAuswahl(gefundenerMitarbeiter);
         }
 
         private void goToTischAuswahl(Mitarbeiter gefundenerMitarbeiter)
@@ -58,33 +58,31 @@ namespace Restaurant
 
         private void clickLogInButton(object sender, RoutedEventArgs e)
         {
-            String mitarbeiternummer = TextboxMitarbeiternummer.Text;
+            string mitarbeiternummer = TextboxMitarbeiternummer.Text;
 
-            String passwort = PasswortBox.Password;
+            string passwort = PasswortBox.Password;
 
             Mitarbeiter gefundenerMitarbeiter = findeMitarbeiter(mitarbeiternummer,passwort);
 
 
             if(gefundenerMitarbeiter != null)
             {
-                Tischauswahl tischauswahl = new Tischauswahl(this, gefundenerMitarbeiter);
-                Visibility = Visibility.Hidden;
-                tischauswahl.ShowDialog();
+                goToTischAuswahl(gefundenerMitarbeiter);
             } else
             {
-                //TODO fehlermeldung schreiben
+                MessageBox.Show(Constants.Constants.FALSCHE_EINGABEN_FEHLERMELDUNG);
             }
         }
 
-        private Mitarbeiter findeMitarbeiter(String mitarbeiternummer, String passwort)
+        private Mitarbeiter findeMitarbeiter(string mitarbeiternummer, string passwort)
         {
             Mitarbeiter gefundenerMitarbeiter = null;
             try
             {
                 dataConnection.Open();
-
                 OleDbCommand command = dataConnection.CreateCommand();
                 command.Connection = dataConnection;
+                // TODO: Gegen SQL Injection absichern
                 command.CommandText = "SELECT COUNT(*) FROM PERSONALLOGIN WHERE MITARBEITERNR = '" + mitarbeiternummer + "' AND PASSWORT = '" + passwort + "';";
 
                 OleDbDataReader reader = command.ExecuteReader();
@@ -92,6 +90,7 @@ namespace Restaurant
                 reader.Read();
                 if(reader.GetInt32(0) == 0)
                 {
+                    dataConnection.Close();
                     return null;
                 }
                 reader.Close();
