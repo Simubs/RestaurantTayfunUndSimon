@@ -58,11 +58,13 @@
     <Compile Include="Entitys\Bestellung.cs" />
     <Compile Include="Entitys\KartenElement.cs" />
     <Compile Include="Entitys\Mitarbeiter.cs" />
-    <Compile Include="Entitys\RunConfigurationVariables.cs" />
+    <Compile Include="Entitys\Rechnung.cs" />
+    <Compile Include="RunConfigs\RunConfigurationVariables.cs" />
     <Compile Include="Entitys\Tisch.cs" />
     <Compile Include="LogInMitarbeiter.xaml.cs">
       <DependentUpon>LogInMitarbeiter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\RechnungErsteller.cs" />
     <Compile Include="Startseite.xaml.cs">
       <DependentUpon>Startseite.xaml</DependentUpon>
     </Compile>

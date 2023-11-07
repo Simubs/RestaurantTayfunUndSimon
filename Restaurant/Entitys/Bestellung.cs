@@ -8,10 +8,12 @@ namespace Restaurant.Entitys
 {
     class Bestellung
     {
-        public int BestellNr { get; set; }
+        public string BestellNr { get; set; }
         public int RechnungNr { get; set; }
 
         public KartenElement KartenElement {get;set;}
+
+        public int Anzahl { get; set; }
         public int KartenElementNr { get;set;}
     }
 }
