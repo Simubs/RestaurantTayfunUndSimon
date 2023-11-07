@@ -51,5 +51,12 @@ namespace Restaurant
             logInFenster.Show();
 
         }
+
+        private void RechnungAnsichtButton_Click(object sender, RoutedEventArgs e)
+        {
+            RechnungAnsicht rechnungAnsicht = new RechnungAnsicht(this);
+            Visibility = Visibility.Hidden;
+            rechnungAnsicht.Show();
+        }
     }
 }

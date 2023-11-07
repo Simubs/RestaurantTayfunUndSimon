@@ -11,5 +11,7 @@ namespace Restaurant.Entitys
         public static readonly string PATH_TO_DATABASE_DYNAMIC = @"..\..\Datenbank\Restaurant-Datenbank.accdb";
         public static readonly string PATH_TO_DATABASE_ON_SIGR_PC = "C:\\Entwicklung\\ScheisVSProjekte\\Restaurant\\Restaurant\\Datenbank\\Restaurant-Datenbank.accdb";
 
+        public const bool RUNNING_ON_DEBUG_MODE = true;
+
     }
 }

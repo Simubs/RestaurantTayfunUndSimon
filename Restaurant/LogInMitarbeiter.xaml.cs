@@ -29,6 +29,31 @@ namespace Restaurant
             InitializeComponent();
             dataConnection = new OleDbConnection(connectionString);
             this.vorgaengerFenster = vorgaengerFenster;
+            if(RunConfigurationVariables.RUNNING_ON_DEBUG_MODE)
+            {
+                Button ByPassLoginButton = new Button();
+                ByPassLoginButton.Content = "Bypass Login DebugFeature";
+                ByPassLoginButton.Click += ByPassButtonClicked;
+                ByPassLoginButton.HorizontalAlignment = HorizontalAlignment.Right;
+                ByPassLoginButton.VerticalAlignment = VerticalAlignment.Bottom;
+                MainGrid.Children.Add(ByPassLoginButton);
+
+                //this.StackPa .AddChild(ByPassLoginButton);
+
+            }
+        }
+
+        private void ByPassButtonClicked(object sender, RoutedEventArgs e)
+        {
+            goToTischAuswahl(findeMitarbeiter("1","test"));
+        }
+
+        private void goToTischAuswahl(Mitarbeiter gefundenerMitarbeiter)
+        {
+            Tischauswahl tischauswahl = new Tischauswahl(this, gefundenerMitarbeiter);
+            Visibility = Visibility.Hidden;
+            tischauswahl.ShowDialog();
+            
         }
 
         private void clickLogInButton(object sender, RoutedEventArgs e)
@@ -99,5 +124,7 @@ namespace Restaurant
             vorgaengerFenster.Visibility = Visibility.Visible;
             Close();
         }
+
+        
     }
 }

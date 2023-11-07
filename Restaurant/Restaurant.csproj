@@ -55,10 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Entitys\Bestellung.cs" />
     <Compile Include="Entitys\KartenElement.cs" />
     <Compile Include="Entitys\Mitarbeiter.cs" />
     <Compile Include="Entitys\Rechnung.cs" />
+    <Compile Include="RechnungAnsicht.xaml.cs">
+      <DependentUpon>RechnungAnsicht.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RunConfigs\RunConfigurationVariables.cs" />
     <Compile Include="Entitys\Tisch.cs" />
     <Compile Include="LogInMitarbeiter.xaml.cs">
@@ -76,6 +80,10 @@
       <DependentUpon>Tischauswahl.xaml</DependentUpon>
     </Compile>
     <Page Include="LogInMitarbeiter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RechnungAnsicht.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
