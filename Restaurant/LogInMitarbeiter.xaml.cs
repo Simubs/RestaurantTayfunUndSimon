@@ -82,18 +82,27 @@ namespace Restaurant
                 dataConnection.Open();
                 OleDbCommand command = dataConnection.CreateCommand();
                 command.Connection = dataConnection;
-                // TODO: Gegen SQL Injection absichern
-                command.CommandText = "SELECT COUNT(*) FROM PERSONALLOGIN WHERE MITARBEITERNR = '" + mitarbeiternummer + "' AND PASSWORT = '" + passwort + "';";
+                
+                Regex sqlInjectionRegex = new Regex("@[-<>=&%]");
 
-                OleDbDataReader reader = command.ExecuteReader();
+                if (!sqlInjectionRegex.IsMatch(mitarbeiternummer) || sqlInjectionRegex.IsMatch(passwort))
+                {
+                    command.CommandText = "SELECT COUNT(*) FROM PERSONALLOGIN WHERE MITARBEITERNR = '" + mitarbeiternummer + "' AND PASSWORT = '" + passwort + "';";
 
-                reader.Read();
-                if(reader.GetInt32(0) == 0)
+                    OleDbDataReader reader = command.ExecuteReader();
+                    reader.Read();
+                    if(reader.GetInt32(0) == 0)
+                    {
+                        dataConnection.Close();
+                        return null;
+                    }
+                    reader.Close();
+
+                } else
                 {
                     dataConnection.Close();
-                    return null;
+                    throw new Exception("SQL Zeichenketten verwendet!");
                 }
-                reader.Close();
 
                 command.CommandText = "SELECT PERSONAL_NR,VORNAME,NACHNAME,TAETIGKEITSBEREICH FROM PERSONAL WHERE PERSONAL_NR = " + mitarbeiternummer + ";";
 
@@ -112,9 +121,6 @@ namespace Restaurant
                 Console.WriteLine(e.ToString());
             }
 
-            
-
-
             return gefundenerMitarbeiter;
         }
 
@@ -123,7 +129,5 @@ namespace Restaurant
             vorgaengerFenster.Visibility = Visibility.Visible;
             Close();
         }
-
-        
     }
 }
