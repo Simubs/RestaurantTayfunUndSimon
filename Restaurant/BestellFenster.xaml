@@ -1,21 +1,34 @@
-﻿<Window x:Class="Restaurant.BestellFenster"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant"
+        xmlns:Entitys="clr-namespace:Restaurant.Entitys" x:Class="Restaurant.BestellFenster"
         mc:Ignorable="d"
         Title="BestellFenster" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="315" Margin="10,99,0,0" VerticalAlignment="Top" Width="300" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged"/>
-        <ComboBox HorizontalAlignment="Left" Height="29" Margin="23,48,0,0" VerticalAlignment="Top" Width="416"/>
-        <Button x:Name="zurueck" Content="Zurück" HorizontalAlignment="Left" Height="33" Margin="678,10,0,0" VerticalAlignment="Top" Width="112"/>
+        <Button x:Name="zurueck" Content="Zurück" HorizontalAlignment="Left" Height="33" Margin="678,10,0,0" VerticalAlignment="Top" Width="112" Click="zurueck_Click"/>
         <Button x:Name="loeschenButton" Content="Löschen" HorizontalAlignment="Left" Height="82" Margin="664,217,0,0" VerticalAlignment="Top" Width="126"/>
         <Button Content="Bestellung abschicken" HorizontalAlignment="Left" Height="104" Margin="664,310,0,0" VerticalAlignment="Top" Width="126"/>
         <TextBox x:Name="hinweiseTextBox" HorizontalAlignment="Left" Height="103" Margin="664,99,0,0" TextWrapping="Wrap" Text="Hinweise" VerticalAlignment="Top" Width="126"/>
         <Button x:Name="HinzufuegenButton" Content="Zur Bestellung hinzufügen" HorizontalAlignment="Left" Height="29" Margin="456,48,0,0" VerticalAlignment="Top" Width="203"/>
         <Label Content="Bestellfenster" HorizontalAlignment="Left" Height="33" Margin="23,10,0,0" VerticalAlignment="Top" Width="416" FontSize="16" FontWeight="Bold"/>
-        <DataGrid HorizontalAlignment="Left" Height="315" Margin="344,99,0,0" VerticalAlignment="Top" Width="300" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <DataGrid x:Name="KartenElementeGridView" HorizontalAlignment="Left" Height="315" Margin="23,99,0,0" VerticalAlignment="Top" Width="285">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" MinWidth="250"></DataGridTextColumn>
+                <DataGridTextColumn Header="Preis" Binding="{Binding Preis}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid HorizontalAlignment="Left" Height="315" Margin="360,99,0,0" VerticalAlignment="Top" Width="285">
+            <DataGrid.Columns >
+                <DataGridTextColumn x:Name="BestellungDataGrid" Header="Name" Binding="{Binding Name}" CanUserResize="False" CanUserReorder="False" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Preis" Binding="{Binding Preis}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Hinweise" Binding="{Binding Hinweise}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="elementhinzufuegen" Content="-&gt;" HorizontalAlignment="Left" Height="33" Margin="313,217,0,0" VerticalAlignment="Top" Width="42" Click="HinzufuegenButton_Click"/>
+        <Button x:Name="loeschen" Content="&lt;-" HorizontalAlignment="Left" Height="33" Margin="313,266,0,0" VerticalAlignment="Top" Width="42" Click="loeschenButton_Click"/>
 
     </Grid>
 </Window>

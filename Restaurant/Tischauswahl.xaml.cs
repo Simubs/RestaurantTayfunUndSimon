@@ -296,7 +296,9 @@ namespace Restaurant
 
         private void TischauswahlButton_Click(object sender, RoutedEventArgs e)
         {
-
+            BestellFenster bestellFenster = new BestellFenster(this, 1, ausgewaelterTisch);
+            bestellFenster.Show();
+            this.Visibility = Visibility.Hidden;
         }
 
     
