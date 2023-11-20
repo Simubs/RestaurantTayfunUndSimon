@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Restaurant"
         xmlns:Entitys="clr-namespace:Restaurant.Entitys" x:Class="Restaurant.BestellFenster"
         mc:Ignorable="d"
-        Title="BestellFenster" Height="450" Width="800" ResizeMode="NoResize">
+        Title="BestellFenster" Height="450" Width="800" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="zurueck" Content="Zurück" HorizontalAlignment="Left" Height="33" Margin="678,10,0,0" VerticalAlignment="Top" Width="112" Click="zurueck_Click"/>
         <Button x:Name="TischWechselnButton" Content="Tisch übergeben" HorizontalAlignment="Left" Height="82" Margin="664,217,0,0" VerticalAlignment="Top" Width="126" Click="TischWechselnButton_Click"/>

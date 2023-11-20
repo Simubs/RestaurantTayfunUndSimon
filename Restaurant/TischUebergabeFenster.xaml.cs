@@ -71,7 +71,7 @@ namespace Restaurant
 
         private bool isTischGeeignet(Tisch tisch)
         {
-            return tisch.tischNr != vorherigerTisch.tischNr && tisch.sitzplaetze > gewuensteSitzplaetze;
+            return tisch.tischNr != vorherigerTisch.tischNr && tisch.sitzplaetze >= gewuensteSitzplaetze;
         }
 
         private void zurueckButton(object sender, RoutedEventArgs e)
@@ -83,98 +83,98 @@ namespace Restaurant
         {
             ausgewaelterTisch = (Tisch)tische[1];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "1";
+            
         }
 
         private void Tisch2_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[2];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "2";
+            
         }
 
         private void Tisch3_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[3];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "3";
+            
         }
 
         private void Tisch4_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[4];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "4";
+            
         }
 
         private void Tisch5_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[5];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "5";
+           
         }
 
         private void Tisch6_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[6];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "6";
+           
         }
 
         private void Tisch7_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[7];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "7";
+          
         }
 
         private void Tisch8_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[8];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "8";
+          
         }
 
         private void Tisch9_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[9];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "9";
+      
         }
 
         private void Tisch10_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[10];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "10";
+    
         }
 
         private void Tisch11_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[11];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "11";
+     
         }
 
         private void Tisch12_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[12];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "12";
+        
         }
 
         private void Tisch13_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[13];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "13";
+       
         }
 
         private void Tisch14_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[14];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "14";
+    
 
         }
 
@@ -182,77 +182,77 @@ namespace Restaurant
         {
             ausgewaelterTisch = (Tisch)tische[15];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "15";
+
         }
 
         private void Tisch16_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[16];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "16";
+           
         }
 
         private void Tisch17_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[17];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "17";
+           
         }
 
         private void Tisch18_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[18];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "18";
+   
         }
 
         private void Tisch19_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[19];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "19";
+         
         }
 
         private void Tisch20_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[20];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "20";
+   
         }
 
         private void Tisch21_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[21];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "21";
+           
         }
 
         private void Tisch22_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[22];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "22";
+
         }
 
         private void Tisch23_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[23];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "23";
+            
         }
 
         private void Tisch24_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[24];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "24";
+     
         }
 
         private void Tisch25_Click(object sender, RoutedEventArgs e)
         {
             ausgewaelterTisch = (Tisch)tische[25];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
-            Tischauswahl1.SelectedItem = "25";
+            
         }
 
         private void ValueGeaendertSlider(object sender, RoutedPropertyChangedEventArgs<double> e)
