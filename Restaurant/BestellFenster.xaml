@@ -9,7 +9,7 @@
         Title="BestellFenster" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Button x:Name="zurueck" Content="Zurück" HorizontalAlignment="Left" Height="33" Margin="678,10,0,0" VerticalAlignment="Top" Width="112" Click="zurueck_Click"/>
-        <Button x:Name="loeschenButton" Content="Löschen" HorizontalAlignment="Left" Height="82" Margin="664,217,0,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="TischWechselnButton" Content="Tisch übergeben" HorizontalAlignment="Left" Height="82" Margin="664,217,0,0" VerticalAlignment="Top" Width="126" Click="TischWechselnButton_Click"/>
         <Button x:Name="BestellungAbschickenButton" Content="Bestellung abschicken" HorizontalAlignment="Left" Height="104" Margin="664,310,0,0" VerticalAlignment="Top" Width="126" Click="BestellungAbschicken_Click"/>
         <TextBox x:Name="hinweiseTextBox" HorizontalAlignment="Left" Height="103" Margin="664,99,0,0" TextWrapping="Wrap" Text="Hinweise" VerticalAlignment="Top" Width="126"/>
         <Button x:Name="EingrenzenButton" Content="Eingrenzen" HorizontalAlignment="Left" Height="29" Margin="456,48,0,0" VerticalAlignment="Top" Width="203" Click="EingrenzenButton_Click"/>

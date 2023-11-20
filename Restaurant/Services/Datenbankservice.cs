@@ -1,5 +1,6 @@
 ﻿using Restaurant.Entitys;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Linq;
@@ -98,7 +99,7 @@ namespace Restaurant.Services
                 while (reader.Read())
                 {
 
-                    bestellungen.Add(new Bestellung(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2),ermittelnKartenElementsByElementNr(reader.GetInt32(2)), reader.GetInt32(3),reader.GetString(4),DateTime.Parse(reader.GetString(5)),reader.GetBoolean(6),reader.GetInt32(7)));
+                    bestellungen.Add(new Bestellung(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(7),ermittelnKartenElementsByElementNr(reader.GetInt32(2)), reader.GetInt32(2),reader.GetString(4),DateTime.Parse(reader.GetString(5)),reader.GetBoolean(6),reader.GetInt32(3)));
 
                 }
                 reader.Close();
@@ -124,15 +125,21 @@ namespace Restaurant.Services
 
                 OleDbCommand command = dataConnection.CreateCommand();
                 command.Connection = dataConnection;
-                command.CommandText = "INSERT INTO Bestellungen(RECHNUNGS_NR,K_ELEM_NR,GAESTE_NR,BESONDERHEITEN,AUFGEGEBEN_AM,BESTELLUNG_ERLEDIGT,TISCH_NR) VALUES (?,?,?,?,?,?,?);";
-                command.Parameters.AddWithValue("RECHNUNGS_NR", zuSpeicherndeBestellung.RechnungNr);
-                command.Parameters.AddWithValue("K_ELEM_NR",  zuSpeicherndeBestellung.KartenElementNr);
-                command.Parameters.AddWithValue("GAESTE_NR",  zuSpeicherndeBestellung.GaesteNr);
-                command.Parameters.AddWithValue("BESONDERHEITEN",  zuSpeicherndeBestellung.Hinweise);
-                command.Parameters.AddWithValue("AUFGEGEBEN_AM",  zuSpeicherndeBestellung.AufgegebenAm.ToLongDateString());
-                command.Parameters.AddWithValue("BESTELLUNG_ERLEDIGT", zuSpeicherndeBestellung.Erledigt);
-                command.Parameters.AddWithValue("TISCH_NR",  zuSpeicherndeBestellung.TischNr);
-                
+                if (zuSpeicherndeBestellung.BestellNr == 0) {
+                    command.CommandText = "INSERT INTO Bestellungen(RECHNUNGS_NR,K_ELEM_NR,GAESTE_NR,BESONDERHEITEN,AUFGEGEBEN_AM,BESTELLUNG_ERLEDIGT,TISCH_NR) VALUES (?,?,?,?,?,?,?);";
+                    command.Parameters.AddWithValue("RECHNUNGS_NR", zuSpeicherndeBestellung.RechnungNr);
+                    command.Parameters.AddWithValue("K_ELEM_NR", zuSpeicherndeBestellung.KartenElementNr);
+                    command.Parameters.AddWithValue("GAESTE_NR", zuSpeicherndeBestellung.GaesteNr);
+                    command.Parameters.AddWithValue("BESONDERHEITEN", zuSpeicherndeBestellung.Hinweise);
+                    command.Parameters.AddWithValue("AUFGEGEBEN_AM", zuSpeicherndeBestellung.AufgegebenAm.ToLongDateString());
+                    command.Parameters.AddWithValue("BESTELLUNG_ERLEDIGT", zuSpeicherndeBestellung.Erledigt);
+                    command.Parameters.AddWithValue("TISCH_NR", zuSpeicherndeBestellung.TischNr);
+                } else
+                {
+                    
+                    command.CommandText = "UPDATE BESTELLUNGEN SET BESTELLUNG_ERLEDIGT = " + zuSpeicherndeBestellung.Erledigt + ", BESONDERHEITEN = '"+zuSpeicherndeBestellung.Hinweise+"' WHERE BESTELL_NR=" + zuSpeicherndeBestellung.BestellNr + ";";
+                    
+                }
                 command.ExecuteNonQuery();
 
             }
@@ -162,6 +169,38 @@ namespace Restaurant.Services
             {
                 Console.WriteLine("Fehler Datenbank :( " + e.Message);
             }
+        }
+
+        public Hashtable bekommeAlleTische()
+        {
+            Hashtable tisches = new Hashtable();
+            dataConnection = new OleDbConnection(connectionString);
+            try
+            {
+                dataConnection.Open();
+
+                OleDbCommand command = dataConnection.CreateCommand();
+                command.Connection = dataConnection;
+                command.CommandText = "SELECT TISCH_NR,PERSONAL_NR,SITZPLAETZE FROM TISCHE;";
+
+                OleDbDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    tisches.Add(reader.GetInt32(0), new Tisch(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2)));
+
+                }
+                reader.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fehler Datenbank :( " + e.Message);
+            }
+
+
+            return tisches;
         }
     }
 }

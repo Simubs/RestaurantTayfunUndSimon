@@ -114,10 +114,17 @@ namespace Restaurant
         {
             for(int i = 0;i<bestellungs.Count;i++)
             {
+                
                 datenbankservice.SpeichernBestellung(bestellungs[i]);
-                fuellenBestellungen();
             }
+                fuellenBestellungen();
             
+        }
+
+        private void TischWechselnButton_Click(object sender, RoutedEventArgs e)
+        {
+            TischUebergabeFenster tischUebergabeFenster = new TischUebergabeFenster(this,ausgewaehlterTisch);
+            tischUebergabeFenster.Show();
         }
     }
 }

@@ -58,14 +58,18 @@
     <Compile Include="BestellFenster.xaml.cs">
       <DependentUpon>BestellFenster.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Entitys\Bestellung.cs" />
     <Compile Include="Entitys\KartenElement.cs" />
     <Compile Include="Entitys\Mitarbeiter.cs" />
-    <Compile Include="Entitys\RunConfigurationVariables.cs" />
     <Compile Include="Entitys\Tisch.cs" />
     <Compile Include="LogInMitarbeiter.xaml.cs">
       <DependentUpon>LogInMitarbeiter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RechnungAnsicht.xaml.cs">
+      <DependentUpon>RechnungAnsicht.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RunConfigs\RunConfigurationVariables.cs" />
     <Compile Include="Services\Datenbankservice.cs" />
     <Compile Include="Startseite.xaml.cs">
       <DependentUpon>Startseite.xaml</DependentUpon>
@@ -77,6 +81,9 @@
     <Compile Include="Tischauswahl.xaml.cs">
       <DependentUpon>Tischauswahl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TischUebergabeFenster.xaml.cs">
+      <DependentUpon>TischUebergabeFenster.xaml</DependentUpon>
+    </Compile>
     <Page Include="BestellFenster.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,11 +92,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RechnungAnsicht.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Startseite.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tischauswahl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TischUebergabeFenster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
