@@ -1,0 +1,22 @@
+﻿<Window x:Class="Restaurant.Startseite"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restaurant"
+        mc:Ignorable="d"
+        Title="Startseite" Height="477" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Bilder\Restaurant-Logo.png">
+    <Grid>
+        <Grid Margin="0,0,0,10">
+            <Image x:Name="BildVorspeise" HorizontalAlignment="Left" Height="217" VerticalAlignment="Top" Width="400" Source="/Bilder/VorspeiseBild.jpg" Stretch="Fill" Margin="0,22,0,0"/>
+            <Image x:Name="BildHauptgericht" HorizontalAlignment="Right" Height="217" VerticalAlignment="Top" Width="400" Source="/Bilder/HauptgerichtBild.jpg" Stretch="Fill" Margin="0,22,0,0"/>
+            <Image x:Name="BildNachtisch" HorizontalAlignment="Left" Height="217" VerticalAlignment="Bottom" Width="400" Source="/Bilder/NachspeiseBild.jpg" Stretch="Fill"/>
+            <Image x:Name="BildGetraenke" HorizontalAlignment="Right" Height="217" VerticalAlignment="Bottom" Width="400" Source="/Bilder/VorspeiseBild.jpg" Stretch="Fill"/>
+            <Button x:Name="ButtonVorspeise" Content="Button" HorizontalAlignment="Left" Height="212" VerticalAlignment="Top" Width="400" Click="clickVorspeiseButton" Margin="0,22,0,0" Visibility="Hidden"/>
+            <Button x:Name="ButtonHauptspeise" Content="Button" HorizontalAlignment="Right" Height="212" VerticalAlignment="Top" Width="400" Click="clickHauptspeiseButton" Margin="0,22,0,0" Visibility="Hidden"/>
+            <Button x:Name="ButtonNachtisch" Content="Button" HorizontalAlignment="Left" Height="217" VerticalAlignment="Bottom" Width="400" Click="clickNachtischButton" Visibility="Hidden" />
+            <Button x:Name="ButtonGetraenke" Content="Button" HorizontalAlignment="Right" Height="217" VerticalAlignment="Bottom" Width="400" Click="clickGetraenkeButton" Visibility="Hidden" />
+            <Button x:Name="ButtonMitarbeiteransicht" Content="Mitarbeiteransicht" HorizontalAlignment="Right" Height="22" VerticalAlignment="Top" Width="143" Click="clickMitarbeiteransichtButton" Margin="0,0,329,0"/>
+        </Grid>
+    </Grid>
+</Window>
