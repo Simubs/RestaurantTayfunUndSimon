@@ -12,7 +12,7 @@
         <Button x:Name="TischWechselnButton" Content="Tisch übergeben" HorizontalAlignment="Left" Height="82" Margin="664,217,0,0" VerticalAlignment="Top" Width="126" Click="TischWechselnButton_Click"/>
         <Button x:Name="BestellungAbschickenButton" Content="Bestellung abschicken" HorizontalAlignment="Left" Height="104" Margin="664,310,0,0" VerticalAlignment="Top" Width="126" Click="BestellungAbschicken_Click"/>
         <TextBox x:Name="hinweiseTextBox" HorizontalAlignment="Left" Height="103" Margin="664,99,0,0" TextWrapping="Wrap" Text="Hinweise" VerticalAlignment="Top" Width="126"/>
-        <Button x:Name="EingrenzenButton" Content="Eingrenzen" HorizontalAlignment="Left" Height="29" Margin="456,48,0,0" VerticalAlignment="Top" Width="203" Click="EingrenzenButton_Click"/>
+        <Button x:Name="AbrechnenButton" Content="Abrechnen" HorizontalAlignment="Left" Height="29" Margin="456,48,0,0" VerticalAlignment="Top" Width="203" Click="AbrechnenButton_Click"/>
         <Label Content="Bestellfenster" HorizontalAlignment="Left" Height="33" Margin="23,10,0,0" VerticalAlignment="Top" Width="416" FontSize="16" FontWeight="Bold"/>
         <DataGrid x:Name="KartenElementeGridView" HorizontalAlignment="Left" Height="315" Margin="23,99,0,0" VerticalAlignment="Top" Width="285" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns >
@@ -30,7 +30,7 @@
         </DataGrid>
         <Button x:Name="elementhinzufuegen" Content="-&gt;" HorizontalAlignment="Left" Height="33" Margin="313,217,0,0" VerticalAlignment="Top" Width="42" Click="HinzufuegenButton_Click"/>
         <Button x:Name="loeschen" Content="&lt;-" HorizontalAlignment="Left" Height="33" Margin="313,266,0,0" VerticalAlignment="Top" Width="42" Click="loeschenButton_Click"/>
-        <ComboBox x:Name="ElementArtAuswahlComboBox" HorizontalAlignment="Left" Height="29" Margin="23,48,0,0" VerticalAlignment="Top" Width="416" IsSynchronizedWithCurrentItem="False"/>
+        <ComboBox x:Name="ElementArtAuswahlComboBox" HorizontalAlignment="Left" Height="29" Margin="23,48,0,0" VerticalAlignment="Top" Width="416" IsSynchronizedWithCurrentItem="False" SelectionChanged="KartenElementArtGeändert"/>
 
     </Grid>
 </Window>
