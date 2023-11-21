@@ -29,12 +29,14 @@ namespace Restaurant
         private Tisch vorherigerTisch;
         private int gewuensteSitzplaetze = 0;
         private Hashtable tische = new Hashtable();
+        private Hashtable besetzteTische = new Hashtable();
         private Datenbankservice datenbankservice = new Datenbankservice();
 
         public TischUebergabeFenster(BestellFenster vorgaengerFenster,Tisch vorherigerTisch)
         {
             this.vorherigerTisch = vorherigerTisch;
             this.vorgaengerFenster = vorgaengerFenster;
+            besetzteTische = datenbankservice.ermittelnBesetztentische();
             tische = datenbankservice.bekommeAlleTische();
             InitializeComponent();
             
@@ -71,7 +73,7 @@ namespace Restaurant
 
         private bool isTischGeeignet(Tisch tisch)
         {
-            return tisch.tischNr != vorherigerTisch.tischNr && tisch.sitzplaetze >= gewuensteSitzplaetze;
+            return tisch.tischNr != vorherigerTisch.tischNr && tisch.sitzplaetze >= gewuensteSitzplaetze && !besetzteTische.ContainsKey(tisch.tischNr);
         }
 
         private void zurueckButton(object sender, RoutedEventArgs e)
@@ -273,6 +275,13 @@ namespace Restaurant
 
         private void TischauswahlButton_Click(object sender, RoutedEventArgs e)
         {
+
+            if(ausgewaelterTisch != null)
+            {
+                
+                if(datenbankservice.uebergebeTisch(vorherigerTisch, ausgewaelterTisch)) { Close(); }
+
+            }
 
         }
     }

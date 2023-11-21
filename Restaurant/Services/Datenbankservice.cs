@@ -171,6 +171,39 @@ namespace Restaurant.Services
             }
         }
 
+        public Hashtable ermittelnBesetztentische()
+        {
+            Hashtable tisches = new Hashtable();
+
+            dataConnection = new OleDbConnection(connectionString);
+            try
+            {
+                dataConnection.Open();
+
+                OleDbCommand command = dataConnection.CreateCommand();
+                command.Connection = dataConnection;
+                command.CommandText = $"SELECT TISCHE.TISCH_NR,TISCHE.PERSONAL_NR,TISCHE.SITZPLAETZE FROM TISCHE INNER JOIN BESTELLUNGEN  ON TISCHE.TISCH_NR = BESTELLUNGEN.TISCH_NR WHERE BESTELLUNGEN.RECHNUNGS_NR = 0 ";
+
+                OleDbDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    tisches.Add(reader.GetInt32(0), new Tisch(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2)));
+
+                }
+                reader.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fehler Datenbank :( " + e.Message);
+            }
+
+
+            return tisches;
+        }
+
         public Hashtable bekommeAlleTische()
         {
             Hashtable tisches = new Hashtable();
@@ -201,6 +234,33 @@ namespace Restaurant.Services
 
 
             return tisches;
+        }
+
+        public bool uebergebeTisch(Tisch vorherigerTisch, Tisch neuerTisch)
+        {
+
+            dataConnection = new OleDbConnection(connectionString);
+
+            try
+            {
+                dataConnection.Open();
+
+                OleDbCommand command = dataConnection.CreateCommand();
+                command.Connection = dataConnection;
+                
+
+                command.CommandText = "UPDATE BESTELLUNGEN SET TISCH_NR = " + neuerTisch.tischNr + " WHERE TISCH_NR=" + vorherigerTisch.tischNr + ";";
+
+                
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fehler Datenbank :( " + e.Message);
+                return false;
+            }
+            return true;
         }
     }
 }
