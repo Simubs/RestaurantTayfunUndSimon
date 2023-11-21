@@ -57,31 +57,31 @@ namespace Restaurant
 
         private void tischeAuswaehlen()
         {
-            Tisch1.IsEnabled = ((Tisch)tische[1]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch2.IsEnabled = ((Tisch)tische[2]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch3.IsEnabled = ((Tisch)tische[3]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch4.IsEnabled = ((Tisch)tische[4]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch5.IsEnabled = ((Tisch)tische[5]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch6.IsEnabled = ((Tisch)tische[6]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch7.IsEnabled = ((Tisch)tische[7]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch8.IsEnabled = ((Tisch)tische[8]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch9.IsEnabled = ((Tisch)tische[9]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch10.IsEnabled = ((Tisch)tische[10]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch11.IsEnabled = ((Tisch)tische[11]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch12.IsEnabled = ((Tisch)tische[12]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch13.IsEnabled = ((Tisch)tische[13]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch14.IsEnabled = ((Tisch)tische[14]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch15.IsEnabled = ((Tisch)tische[15]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch16.IsEnabled = ((Tisch)tische[16]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch17.IsEnabled = ((Tisch)tische[17]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch18.IsEnabled = ((Tisch)tische[18]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch19.IsEnabled = ((Tisch)tische[19]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch20.IsEnabled = ((Tisch)tische[20]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch21.IsEnabled = ((Tisch)tische[21]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch22.IsEnabled = ((Tisch)tische[22]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch23.IsEnabled = ((Tisch)tische[23]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch24.IsEnabled = ((Tisch)tische[24]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
-            Tisch25.IsEnabled = ((Tisch)tische[25]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer;
+            Tisch1.IsEnabled = ((Tisch)tische[1]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch2.IsEnabled = ((Tisch)tische[2]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch3.IsEnabled = ((Tisch)tische[3]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch4.IsEnabled = ((Tisch)tische[4]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch5.IsEnabled = ((Tisch)tische[5]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch6.IsEnabled = ((Tisch)tische[6]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch7.IsEnabled = ((Tisch)tische[7]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch8.IsEnabled = ((Tisch)tische[8]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch9.IsEnabled = ((Tisch)tische[9]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch10.IsEnabled = ((Tisch)tische[10]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch11.IsEnabled = ((Tisch)tische[11]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch12.IsEnabled = ((Tisch)tische[12]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch13.IsEnabled = ((Tisch)tische[13]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch14.IsEnabled = ((Tisch)tische[14]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch15.IsEnabled = ((Tisch)tische[15]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch16.IsEnabled = ((Tisch)tische[16]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch17.IsEnabled = ((Tisch)tische[17]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch18.IsEnabled = ((Tisch)tische[18]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch19.IsEnabled = ((Tisch)tische[19]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch20.IsEnabled = ((Tisch)tische[20]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch21.IsEnabled = ((Tisch)tische[21]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch22.IsEnabled = ((Tisch)tische[22]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch23.IsEnabled = ((Tisch)tische[23]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch24.IsEnabled = ((Tisch)tische[24]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
+            Tisch25.IsEnabled = ((Tisch)tische[25]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich == 99;
         }
 
         private void abfrageTische()
@@ -307,6 +307,11 @@ namespace Restaurant
         {
             ausgewaelterTisch = (Tisch)tische[Tischauswahl1.SelectedItem];
             AnzahlSitzplaetzeBox.Text = ausgewaelterTisch.sitzplaetze.ToString();
+        }
+
+        private void UmsatzuebersichtButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

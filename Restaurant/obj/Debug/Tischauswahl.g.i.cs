@@ -272,6 +272,14 @@ namespace Restaurant {
         #line default
         #line hidden
         
+        
+        #line 43 "..\..\Tischauswahl.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button UmsatzuebersichtButton;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -556,6 +564,15 @@ namespace Restaurant {
             return;
             case 29:
             this.AnzahlSitzplaetzeBox = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 30:
+            this.UmsatzuebersichtButton = ((System.Windows.Controls.Button)(target));
+            
+            #line 43 "..\..\Tischauswahl.xaml"
+            this.UmsatzuebersichtButton.Click += new System.Windows.RoutedEventHandler(this.UmsatzuebersichtButton_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

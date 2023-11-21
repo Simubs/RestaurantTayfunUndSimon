@@ -78,6 +78,7 @@ namespace Restaurant
 
         private void zurueckButton(object sender, RoutedEventArgs e)
         {
+            vorgaengerFenster.fuellenBestellungen();
             Close();
         }
 
