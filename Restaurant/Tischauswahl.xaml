@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant"
         mc:Ignorable="d"
-        Title="Tischauswahl" Height="524" Width="911" Background="#FF4545F5" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Bilder\Restaurant-Logo.png">
+        Title="Tischauswahl" Height="524" Width="911" Background="#FF8D8D90" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Bilder\Restaurant-Logo.png">
     <Grid Margin="0,0,0,2">
-        <Button x:Name="LogOutButton" Content="LogOut" HorizontalAlignment="Left" Height="32" Margin="779,10,0,0" VerticalAlignment="Top" Width="122" Click="clickLogOutButton"/>
+
+        <Button x:Name="LogOutButton" Content="LogOut" HorizontalAlignment="Left" Height="32" Margin="779,10,0,0" VerticalAlignment="Top" Width="122" Click="clickLogOutButton" Grid.ColumnSpan="2"/>
         <Rectangle HorizontalAlignment="Left" Height="433" Margin="18,63,0,0" Stroke="Black" VerticalAlignment="Top" Width="747"/>
         <Button x:Name="Tisch1" Content="Tisch 1" HorizontalAlignment="Left" Height="55" Margin="32,77,0,0" VerticalAlignment="Top" Width="38" Click="Tisch1_Click" Background="#FF8FFF68"/>
         <Button x:Name="Tisch2" Content="Tisch 2" HorizontalAlignment="Left" Height="90" Margin="119,76,0,0" VerticalAlignment="Top" Width="62" Click="Tisch2_Click" Background="#FF8FFF68"/>
@@ -34,10 +35,10 @@
         <Button x:Name="Tisch13" Content="Tisch 13" HorizontalAlignment="Left" Height="54" Margin="690,211,0,0" VerticalAlignment="Top" Click="Tisch13_Click" Background="#FF8FFF68"/>
         <Button x:Name="Tisch10" Content="Tisch 10" HorizontalAlignment="Left" Height="54" Margin="364,216,0,0" VerticalAlignment="Top" Click="Tisch10_Click" Background="#FF8FFF68"/>
         <Button x:Name="Tisch25" Content="Tisch 25" HorizontalAlignment="Left" Height="54" Margin="627,436,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Background="#FF8FFF68" Click="Tisch25_Click"/>
-        <ComboBox x:Name="Tischauswahl1" HorizontalAlignment="Left" Height="22" Margin="770,293,0,0" VerticalAlignment="Top" Width="131" SelectionChanged="aenderungTischAuswahl"/>
-        <Button x:Name="TischauswahlButton" Content="Tisch auswählen" HorizontalAlignment="Left" Height="134" Margin="773,347,0,0" VerticalAlignment="Top" Width="128" Click="TischauswahlButton_Click"/>
-        <TextBox x:Name="AnzahlSitzplaetzeBox" HorizontalAlignment="Left" Height="61" Margin="780,215,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="103" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False"/>
-        <Label Content="Anzahl Sitzplätze" HorizontalAlignment="Left" Height="31" Margin="780,179,0,0" VerticalAlignment="Top" Width="103"/>
+        <ComboBox x:Name="Tischauswahl1" HorizontalAlignment="Left" Height="22" Margin="770,293,0,0" VerticalAlignment="Top" Width="131" SelectionChanged="aenderungTischAuswahl" Grid.ColumnSpan="2"/>
+        <Button x:Name="TischauswahlButton" Content="Tisch auswählen" HorizontalAlignment="Left" Height="134" Margin="773,347,0,0" VerticalAlignment="Top" Width="128" Click="TischauswahlButton_Click" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="AnzahlSitzplaetzeBox" HorizontalAlignment="Left" Height="61" Margin="780,215,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="103" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" Grid.ColumnSpan="2"/>
+        <Label Content="Anzahl Sitzplätze" HorizontalAlignment="Left" Height="31" Margin="780,179,0,0" VerticalAlignment="Top" Width="103" Grid.ColumnSpan="2"/>
         <Label Content="Tischkarte" HorizontalAlignment="Left" Height="41" Margin="18,17,0,0" VerticalAlignment="Top" Width="302" FontSize="18" FontWeight="Bold" Foreground="White"/>
 
 
