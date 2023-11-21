@@ -47,6 +47,7 @@ namespace Restaurant
         {
             bestellungs = datenbankservice.ermittelnBestellungen(ausgewaehlterTisch.tischNr);
             DatenbankBestellungen = bestellungs;
+            BestellungenDataGrid.ItemsSource = new List<Bestellung>();
             BestellungenDataGrid.ItemsSource = bestellungs;
         }
 
@@ -110,21 +111,26 @@ namespace Restaurant
             
         }
 
-        private void BestellungAbschicken_Click(object sender, RoutedEventArgs e)
+        private async void BestellungAbschicken_Click(object sender, RoutedEventArgs e)
         {
             for(int i = 0;i<bestellungs.Count;i++)
             {
-                
                 datenbankservice.SpeichernBestellung(bestellungs[i]);
             }
-                fuellenBestellungen();
+
+           await Task.Delay(1000);
+
+            fuellenBestellungen();
             
+            
+
         }
 
         private void TischWechselnButton_Click(object sender, RoutedEventArgs e)
         {
             TischUebergabeFenster tischUebergabeFenster = new TischUebergabeFenster(this,ausgewaehlterTisch);
             tischUebergabeFenster.Show();
+            fuellenBestellungen();
         }
     }
 }

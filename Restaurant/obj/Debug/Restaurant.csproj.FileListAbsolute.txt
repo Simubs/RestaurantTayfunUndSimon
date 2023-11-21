@@ -44,3 +44,7 @@ C:\Entwicklung\ScheisVSProjekte\Restaurant\Restaurant\obj\Debug\Restaurant.cspro
 C:\Entwicklung\ScheisVSProjekte\Restaurant\Restaurant\obj\Debug\Restaurant.csproj.CoreCompileInputs.cache
 C:\Entwicklung\ScheisVSProjekte\Restaurant\Restaurant\obj\Debug\TischUebergabeFenster.g.cs
 C:\Entwicklung\ScheisVSProjekte\Restaurant\Restaurant\obj\Debug\TischUebergabeFenster.baml
+C:\Users\sgrewe\Downloads\RestaurantTayfunUndSimon-sgrewe\RestaurantTayfunUndSimon-sgrewe\Restaurant\obj\Debug\RechnungAnsicht.g.cs
+C:\Users\sgrewe\Downloads\RestaurantTayfunUndSimon-sgrewe\RestaurantTayfunUndSimon-sgrewe\Restaurant\obj\Debug\TischUebergabeFenster.g.cs
+C:\Users\sgrewe\Downloads\RestaurantTayfunUndSimon-sgrewe\RestaurantTayfunUndSimon-sgrewe\Restaurant\obj\Debug\RechnungAnsicht.baml
+C:\Users\sgrewe\Downloads\RestaurantTayfunUndSimon-sgrewe\RestaurantTayfunUndSimon-sgrewe\Restaurant\obj\Debug\TischUebergabeFenster.baml
