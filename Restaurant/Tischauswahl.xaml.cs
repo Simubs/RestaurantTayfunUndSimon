@@ -33,8 +33,9 @@ namespace Restaurant
         public Tischauswahl(LogInMitarbeiter vorgaengerFenster, Mitarbeiter eingelogterMitarbeiter)
         {
             InitializeComponent();
+            // Coloring using Constants
+            this.Background = Constants.Constants.DEFAULT_BACKGROUND_COLOR;
             dataConnection = new OleDbConnection(connectionString);
-
             this.vorgaengerFenster = vorgaengerFenster;
             this.eingelogterMitarbeiter = eingelogterMitarbeiter;
             abfrageTische();
@@ -296,7 +297,7 @@ namespace Restaurant
 
         private void TischauswahlButton_Click(object sender, RoutedEventArgs e)
         {
-            BestellFenster bestellFenster = new BestellFenster(this, 1, ausgewaelterTisch);
+            BestellFenster bestellFenster = new BestellFenster(this, 1, ausgewaelterTisch,eingelogterMitarbeiter);
             bestellFenster.Show();
             this.Visibility = Visibility.Hidden;
         }

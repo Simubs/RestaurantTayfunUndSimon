@@ -10,13 +10,14 @@ namespace Restaurant.Services
     class RechnungErsteller
     {
 
-        public static Rechnung ErstelleRechnung(Bestellung bestellung, double trinkgeld, int personalNummer)
+        public static Rechnung ErstelleRechnung(double Betrag ,double trinkgeld, int personalNummer)
         {
             Rechnung ZuErstellendeRechnung = new Rechnung();
             ZuErstellendeRechnung.RechnungNr = System.Guid.NewGuid().ToString();
-  //          ZuErstellendeRechnung.RechnungBetrag = bestellung.KartenElement.Preis * bestellung.Anzahl;
+            ZuErstellendeRechnung.RechnungBetrag = Betrag;
             ZuErstellendeRechnung.Trinkgeld = trinkgeld;
             ZuErstellendeRechnung.PersonalNr = personalNummer;
+            ZuErstellendeRechnung.Datum = DateTime.Today.ToLongDateString();
             return ZuErstellendeRechnung;
         }
 

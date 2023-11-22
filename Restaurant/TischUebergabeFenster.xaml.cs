@@ -39,7 +39,9 @@ namespace Restaurant
             besetzteTische = datenbankservice.ermittelnBesetztentische();
             tische = datenbankservice.bekommeAlleTische();
             InitializeComponent();
-            
+            // Coloring using Constants
+            this.Background = Constants.Constants.DEFAULT_BACKGROUND_COLOR;
+
         }
 
         private void tischeAuswaehlen()

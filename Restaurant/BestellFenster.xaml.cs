@@ -31,13 +31,17 @@ namespace Restaurant
         private Datenbankservice datenbankservice = new Datenbankservice();
         private Tischauswahl vorherigesFenster;
         private Tisch ausgewaehlterTisch;
+        Mitarbeiter eingelogterMitarbeiter;
 
-        public BestellFenster(Tischauswahl vorherigesFenster,int ElementArt, Tisch ausgewaehlterTisch)
+        public BestellFenster(Tischauswahl vorherigesFenster,int ElementArt, Tisch ausgewaehlterTisch,Mitarbeiter eingelogterMitarbeiter)
         {
             this.vorherigesFenster = vorherigesFenster;
             this.ausgewaehlterTisch = ausgewaehlterTisch;
+            this.eingelogterMitarbeiter = eingelogterMitarbeiter;
             
             InitializeComponent();
+            // Coloring using Constants
+            this.Background = Constants.Constants.DEFAULT_BACKGROUND_COLOR;
             ermittelnDerKartenelemente(ElementArt);
             fuellenBestellungen();
             befuellenEingrenzenComboBox();
@@ -72,7 +76,7 @@ namespace Restaurant
         private void HinzufuegenButton_Click(object sender, RoutedEventArgs e)
         {
             KartenElement ausgewaehltesElement = KartenElementeGridView.SelectedItem as KartenElement;
-            bestellungs.Add(new Bestellung(0, 0, ausgewaehlterTisch.tischNr,ausgewaehltesElement, ausgewaehltesElement.KartenElementNr,hinweiseTextBox.Text,DateTime.Now,false,0));
+            bestellungs.Add(new Bestellung(0, "0", ausgewaehlterTisch.tischNr,ausgewaehltesElement, ausgewaehltesElement.KartenElementNr,hinweiseTextBox.Text,DateTime.Now,false,0));
             BestellungenDataGrid.ItemsSource = null;
             BestellungenDataGrid.ItemsSource = bestellungs;
         }
@@ -138,7 +142,10 @@ namespace Restaurant
 
         private void AbrechnenButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO öffnen des Rechnungsfensters
+            RechnungAnsicht rechnungAnsicht = new RechnungAnsicht(this,ausgewaehlterTisch,eingelogterMitarbeiter);
+            Visibility = Visibility.Hidden;
+            rechnungAnsicht.Show();
+
         }
     }
 }

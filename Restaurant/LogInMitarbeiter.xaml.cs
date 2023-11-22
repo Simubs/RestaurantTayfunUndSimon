@@ -28,6 +28,8 @@ namespace Restaurant
         public LogInMitarbeiter(Startseite vorgaengerFenster)
         {
             InitializeComponent();
+            // Coloring using Constants
+            this.Background = Constants.Constants.DEFAULT_BACKGROUND_COLOR;
             dataConnection = new OleDbConnection(connectionString);
             this.vorgaengerFenster = vorgaengerFenster;
             if(RunConfigurationVariables.RUNNING_ON_DEBUG_MODE)
@@ -45,7 +47,7 @@ namespace Restaurant
 
         private void ByPassButtonClicked(object sender, RoutedEventArgs e)
         {
-            Mitarbeiter gefundenerMitarbeiter = findeMitarbeiter("1", "test");
+            Mitarbeiter gefundenerMitarbeiter = findeMitarbeiter("3", "test");
             goToTischAuswahl(gefundenerMitarbeiter);
         }
 

@@ -12,5 +12,6 @@ namespace Restaurant.Entitys
         public double RechnungBetrag { get; set; }
         public double Trinkgeld { get; set; }
         public int PersonalNr { get; set; }
+        public String Datum {  get; set; }
     }
 }

@@ -48,3 +48,5 @@ C:\Users\sgrewe\Downloads\RestaurantTayfunUndSimon-sgrewe\RestaurantTayfunUndSim
 C:\Users\sgrewe\Downloads\RestaurantTayfunUndSimon-sgrewe\RestaurantTayfunUndSimon-sgrewe\Restaurant\obj\Debug\TischUebergabeFenster.g.cs
 C:\Users\sgrewe\Downloads\RestaurantTayfunUndSimon-sgrewe\RestaurantTayfunUndSimon-sgrewe\Restaurant\obj\Debug\RechnungAnsicht.baml
 C:\Users\sgrewe\Downloads\RestaurantTayfunUndSimon-sgrewe\RestaurantTayfunUndSimon-sgrewe\Restaurant\obj\Debug\TischUebergabeFenster.baml
+C:\Entwicklung\ScheisVSProjekte\Restaurant\Restaurant\obj\Debug\UmsatzuebersichtFenster.g.cs
+C:\Entwicklung\ScheisVSProjekte\Restaurant\Restaurant\obj\Debug\UmsatzuebersichtFenster.baml

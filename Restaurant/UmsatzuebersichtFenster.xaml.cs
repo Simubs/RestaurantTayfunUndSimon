@@ -22,6 +22,8 @@ namespace Restaurant
         public UmsatzuebersichtFenster()
         {
             InitializeComponent();
+            // Coloring using Constants
+            this.Background = Constants.Constants.DEFAULT_BACKGROUND_COLOR;
         }
     }
 }

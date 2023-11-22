@@ -17,7 +17,6 @@
             <Button x:Name="ButtonNachtisch" Content="Button" HorizontalAlignment="Left" Height="217" VerticalAlignment="Bottom" Width="400" Click="clickNachtischButton" Visibility="Hidden" />
             <Button x:Name="ButtonGetraenke" Content="Button" HorizontalAlignment="Right" Height="217" VerticalAlignment="Bottom" Width="400" Click="clickGetraenkeButton" Visibility="Hidden" />
             <Button x:Name="ButtonMitarbeiteransicht" Content="Mitarbeiteransicht" HorizontalAlignment="Right" Height="22" VerticalAlignment="Top" Width="143" Click="clickMitarbeiteransichtButton" Margin="0,0,329,0"/>
-            <Button x:Name="RechnungAnsichtButton" Content="RechnungAnsicht" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="116" RenderTransformOrigin="0.054,-0.369" Click="RechnungAnsichtButton_Click"/>
         </Grid>
     </Grid>
 </Window>

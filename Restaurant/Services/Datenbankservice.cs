@@ -41,7 +41,7 @@ namespace Restaurant.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine("Fehler Datenbank :( " + e.Message);
+                Console.WriteLine("Fehler Datenbank :( ermittelnKartenElementsByElementArt " + e.Message);
             }
 
             return kartenelemente;
@@ -74,7 +74,7 @@ namespace Restaurant.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine("Fehler Datenbank :( " + e.Message);
+                Console.WriteLine("Fehler Datenbank :( ermittelnKartenElementsByElementNr " + e.Message);
             }
 
             return kartenelement;
@@ -92,14 +92,14 @@ namespace Restaurant.Services
 
                 OleDbCommand command = dataConnection.CreateCommand();
                 command.Connection = dataConnection;
-                command.CommandText = "SELECT BESTELL_NR,RECHNUNGS_NR,K_ELEM_NR,GAESTE_NR,BESONDERHEITEN,AUFGEGEBEN_AM,BESTELLUNG_ERLEDIGT,TISCH_NR FROM BESTELLUNGEN WHERE AUFGEGEBEN_AM = '"+DateTime.Now.ToLongDateString()+"' AND TISCH_NR ="+TischNr+" ;";
+                command.CommandText = "SELECT BESTELL_NR,RECHNUNGS_NR,K_ELEM_NR,GAESTE_NR,BESONDERHEITEN,AUFGEGEBEN_AM,BESTELLUNG_ERLEDIGT,TISCH_NR FROM BESTELLUNGEN WHERE AUFGEGEBEN_AM = '"+DateTime.Now.ToLongDateString()+"' AND TISCH_NR ="+TischNr+" AND RECHNUNGS_NR = '0' ;";
 
                 OleDbDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
 
-                    bestellungen.Add(new Bestellung(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(7),ermittelnKartenElementsByElementNr(reader.GetInt32(2)), reader.GetInt32(2),reader.GetString(4),DateTime.Parse(reader.GetString(5)),reader.GetBoolean(6),reader.GetInt32(3)));
+                    bestellungen.Add(new Bestellung(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(7),ermittelnKartenElementsByElementNr(reader.GetInt32(2)), reader.GetInt32(2),reader.GetString(4),DateTime.Parse(reader.GetString(5)),reader.GetBoolean(6),reader.GetInt32(3)));
 
                 }
                 reader.Close();
@@ -107,7 +107,7 @@ namespace Restaurant.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine("Fehler Datenbank :( " + e.Message);
+                Console.WriteLine("Fehler Datenbank :( ermittelnBestellungen " + e.Message);
             }
 
             return bestellungen;
@@ -137,7 +137,7 @@ namespace Restaurant.Services
                 } else
                 {
                     
-                    command.CommandText = "UPDATE BESTELLUNGEN SET BESTELLUNG_ERLEDIGT = " + zuSpeicherndeBestellung.Erledigt + ", BESONDERHEITEN = '"+zuSpeicherndeBestellung.Hinweise+"' WHERE BESTELL_NR=" + zuSpeicherndeBestellung.BestellNr + ";";
+                    command.CommandText = "UPDATE BESTELLUNGEN SET BESTELLUNG_ERLEDIGT = " + zuSpeicherndeBestellung.Erledigt + ", BESONDERHEITEN = '"+zuSpeicherndeBestellung.Hinweise+"', RECHNUNGS_NR = '"+zuSpeicherndeBestellung.RechnungNr+"' WHERE BESTELL_NR=" + zuSpeicherndeBestellung.BestellNr + ";";
                     
                 }
                 command.ExecuteNonQuery();
@@ -145,7 +145,7 @@ namespace Restaurant.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine("Fehler Datenbank :( " + e.Message);
+                Console.WriteLine("Fehler Datenbank :( SpeichernBestellung " + e.Message);
             }
         }
 
@@ -167,7 +167,7 @@ namespace Restaurant.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine("Fehler Datenbank :( " + e.Message);
+                Console.WriteLine("Fehler Datenbank :( loeschenBestellung " + e.Message);
             }
         }
 
@@ -197,7 +197,7 @@ namespace Restaurant.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine("Fehler Datenbank :( " + e.Message);
+                Console.WriteLine("Fehler Datenbank :( ermittelnBesetztentische "  + e.Message);
             }
 
 
@@ -229,7 +229,7 @@ namespace Restaurant.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine("Fehler Datenbank :( " + e.Message);
+                Console.WriteLine("Fehler Datenbank :( bekommeAlleTische " + e.Message);
             }
 
 
@@ -257,10 +257,37 @@ namespace Restaurant.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine("Fehler Datenbank :( " + e.Message);
+                Console.WriteLine("Fehler Datenbank :( uebergebeTisch " + e.Message);
                 return false;
             }
             return true;
+        }
+
+        internal void erstelleRechnung(Rechnung zuSpeicherndeRechnung)
+        {
+            dataConnection = new OleDbConnection(connectionString);
+
+            try
+            {
+                dataConnection.Open();
+
+                OleDbCommand command = dataConnection.CreateCommand();
+                command.Connection = dataConnection;
+                
+                command.CommandText = "INSERT INTO RECHNUNGEN(RECHNUNGS_NR,BETRAG,TRINKGELD,PERSONAL_NR,DATUM) VALUES (?,?,?,?,?);";
+                command.Parameters.AddWithValue("RECHNUNGS_NR", zuSpeicherndeRechnung.RechnungNr);
+                command.Parameters.AddWithValue("BETRAG", zuSpeicherndeRechnung.RechnungBetrag);
+                command.Parameters.AddWithValue("TRINKGELD", zuSpeicherndeRechnung.Trinkgeld);
+                command.Parameters.AddWithValue("PERSONAL_NR", zuSpeicherndeRechnung.PersonalNr);
+                command.Parameters.AddWithValue("DATUM", zuSpeicherndeRechnung.Datum);
+
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fehler Datenbank :( erstelleRechnung " + e.Message);
+            }
         }
     }
 }
