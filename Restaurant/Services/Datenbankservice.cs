@@ -13,6 +13,7 @@ namespace Restaurant.Services
     {
         String connectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + RunConfigurationVariables.PATH_TO_DATABASE_DYNAMIC;
         OleDbConnection dataConnection;
+
         public List<KartenElement> ermittelnKartenElementsByElementArt(int elementArt)
         {
            

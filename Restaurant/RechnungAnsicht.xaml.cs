@@ -79,6 +79,7 @@ namespace Restaurant
                     
                 }
                 AusgewaehlteBestellungenDataGrid.ItemsSource = null;
+                RechnungErsteller.ausgabeRechnung(RechnungErsteller.RechnungDateiErsteller(rechnung.RechnungNr,rechnung.RechnungBetrag,rechnung.Trinkgeld,eingelogterMitarbeiter, rechnungBestellungs), rechnung.RechnungNr);
                 rechnungBestellungs = new List<Bestellung>();
                 zuZahlenderBetrag = 0;
                 trinkgeldBetrag = 0;
