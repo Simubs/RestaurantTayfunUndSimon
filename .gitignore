@@ -364,4 +364,4 @@ FodyWeavers.xsd
 
 # Eigene Pfade
 /Restaurant/Rechnungen
->>>>>>> 060b7443ad7f651244336cf5cc561a17dc4d9bea
+/Restaurant/Datenbank/Restaurant-Datenbank.laccdb
