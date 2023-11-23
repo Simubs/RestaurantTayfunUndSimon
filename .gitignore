@@ -361,10 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-<<<<<<< HEAD
-/Restaurant/Rechnungen
-/Restaurant/Datenbank/Restaurant-Datenbank.laccdb
-=======
 
 # Eigene Pfade
 /Restaurant/Rechnungen
