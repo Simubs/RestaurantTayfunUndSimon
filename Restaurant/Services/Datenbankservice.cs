@@ -34,7 +34,7 @@ namespace Restaurant.Services
                 while (reader.Read())
                 {
 
-                    kartenelemente.Add(new KartenElement(reader.GetInt32(0),reader.GetString(1),reader.GetInt32(2),reader.GetInt32(3)));
+                    kartenelemente.Add(new KartenElement(reader.GetInt32(0),reader.GetString(1),reader.GetDouble(2),reader.GetInt32(3)));
 
                 }
                 reader.Close();
@@ -172,9 +172,9 @@ namespace Restaurant.Services
             }
         }
 
-        public Hashtable ermittelnBesetztentische()
+        public  List<int> ermittelnBesetztentische()
         {
-            Hashtable tisches = new Hashtable();
+            List<int> tisches = new List<int>();
 
             dataConnection = new OleDbConnection(connectionString);
             try
@@ -183,14 +183,14 @@ namespace Restaurant.Services
 
                 OleDbCommand command = dataConnection.CreateCommand();
                 command.Connection = dataConnection;
-                command.CommandText = $"SELECT TISCHE.TISCH_NR,TISCHE.PERSONAL_NR,TISCHE.SITZPLAETZE FROM TISCHE INNER JOIN BESTELLUNGEN  ON TISCHE.TISCH_NR = BESTELLUNGEN.TISCH_NR WHERE BESTELLUNGEN.RECHNUNGS_NR = 0 ";
+                command.CommandText = $"SELECT Distinct TISCH_NR FROM BESTELLUNGEN WHERE RECHNUNGS_NR = '0' AND AUFGEGEBEN_AM = '"+DateTime.Today.ToLongDateString()+"'";
 
                 OleDbDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
 
-                    tisches.Add(reader.GetInt32(0), new Tisch(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2)));
+                    tisches.Add(reader.GetInt32(0));
 
                 }
                 reader.Close();
@@ -289,6 +289,71 @@ namespace Restaurant.Services
             {
                 Console.WriteLine("Fehler Datenbank :( erstelleRechnung " + e.Message);
             }
+        }
+
+        internal double berechneUmsatzByTag(DateTime ausgewaehltesDatum)
+        {
+            double TagesUmsatz = 0;
+            dataConnection = new OleDbConnection(connectionString);
+            try
+            {
+                dataConnection.Open();
+
+                OleDbCommand command = dataConnection.CreateCommand();
+                command.Connection = dataConnection;
+                command.CommandText = "SELECT SUM(BETRAG) FROM RECHNUNGEN WHERE DATUM = '"+ausgewaehltesDatum.ToLongDateString()+"';";
+
+                OleDbDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    TagesUmsatz = reader.GetDouble(0);
+                }
+                reader.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fehler Datenbank :( berechneUmsatzByTag " + e.Message);
+            }
+
+
+            return TagesUmsatz;
+        }
+
+        internal List<Mitarbeiter> ermittelnAlleMitarbeiterMitTrinkgeld(DateTime datum)
+        {
+            List<Mitarbeiter> mitarbeiters = new List<Mitarbeiter>();
+            dataConnection = new OleDbConnection(connectionString);
+            try
+            {
+                dataConnection.Open();
+
+                OleDbCommand command = dataConnection.CreateCommand();
+                command.Connection = dataConnection;
+                command.CommandText = "SELECT Personal.PERSONAL_NR, Personal.VORNAME, Personal.NACHNAME, Personal.TAETIGKEITSBEREICH, Sum(Rechnungen.TRINKGELD)  FROM Personal INNER JOIN Rechnungen ON Personal.[PERSONAL_NR] = Rechnungen.[PERSONAL_NR] WHERE Rechnungen.Datum = @datum GROUP BY Personal.PERSONAL_NR, Personal.VORNAME, Personal.NACHNAME, Personal.TAETIGKEITSBEREICH HAVING Sum(Rechnungen.TRINKGELD) IS NOT NULL;";
+
+                command.Parameters.AddWithValue("@datum", datum.ToLongDateString());
+
+                OleDbDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Mitarbeiter mitarbeiter = new Mitarbeiter(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3));
+                    mitarbeiter.trinkgeld = reader.GetDouble(4);
+                    mitarbeiters.Add(mitarbeiter);
+                    mitarbeiter = null;
+                }
+
+                reader.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fehler Datenbank :( ermittelnAlleMitarbeiterMitTrinkgeld " + e.Message);
+            }
+
+
+            return mitarbeiters;
         }
     }
 }

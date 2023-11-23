@@ -55,7 +55,7 @@ namespace Restaurant.Services
 
         public static void ausgabeRechnung(String RechnungDatei, String rechnungsNr)
         {
-            String pfad = @"..\..\Rechnungen\" + rechnungsNr+ ".html";
+            String pfad = Constants.Constants.RECHNUNG_DATEI_PFAD + rechnungsNr+ ".html";
             File.WriteAllText( pfad, RechnungDatei);
         }
 

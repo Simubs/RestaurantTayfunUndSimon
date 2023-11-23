@@ -29,7 +29,7 @@ namespace Restaurant
         private Tisch vorherigerTisch;
         private int gewuensteSitzplaetze = 0;
         private Hashtable tische = new Hashtable();
-        private Hashtable besetzteTische = new Hashtable();
+        private List<int> besetzteTische = new List<int>();
         private Datenbankservice datenbankservice = new Datenbankservice();
 
         public TischUebergabeFenster(BestellFenster vorgaengerFenster,Tisch vorherigerTisch)
@@ -75,7 +75,7 @@ namespace Restaurant
 
         private bool isTischGeeignet(Tisch tisch)
         {
-            return tisch.tischNr != vorherigerTisch.tischNr && tisch.sitzplaetze >= gewuensteSitzplaetze && !besetzteTische.ContainsKey(tisch.tischNr);
+            return tisch.tischNr != vorherigerTisch.tischNr && tisch.sitzplaetze >= gewuensteSitzplaetze && !besetzteTische.Contains(tisch.tischNr);
         }
 
         private void zurueckButton(object sender, RoutedEventArgs e)

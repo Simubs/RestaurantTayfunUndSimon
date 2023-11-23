@@ -4,7 +4,7 @@ namespace Restaurant.Entitys
 {
     public class KartenElement
     {
-        public KartenElement(int KartenElementNr, string ElemName, int Preis, int ElementArtNr) {
+        public KartenElement(int KartenElementNr, string ElemName, double Preis, int ElementArtNr) {
         this.ElementArtNr = ElementArtNr;
         this.Preis = Preis;
             this.KartenElementNr = KartenElementNr;
@@ -15,7 +15,7 @@ namespace Restaurant.Entitys
 
         public string ElemName { get; set; } 
 
-        public int Preis { get; set; }
+        public double Preis { get; set; }
 
         public int ElementArtNr { get; set; }
 

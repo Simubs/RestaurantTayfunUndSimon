@@ -23,5 +23,7 @@ namespace Restaurant.Entitys
         public String nachname { get; set; }
 
         public int taetigkeitsbereich { get; set; }
+
+        public double trinkgeld {  get; set; }
     }
 }

@@ -312,6 +312,8 @@ namespace Restaurant
 
         private void UmsatzuebersichtButton_Click(object sender, RoutedEventArgs e)
         {
+            UmsatzuebersichtFenster umsatzuebersichtFenster = new UmsatzuebersichtFenster(this,eingelogterMitarbeiter);
+            umsatzuebersichtFenster.Show();
 
         }
     }
