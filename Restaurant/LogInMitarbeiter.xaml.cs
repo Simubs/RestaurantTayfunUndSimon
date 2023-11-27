@@ -129,8 +129,13 @@ namespace Restaurant
 
         private void clickZurueckButton(object sender, RoutedEventArgs e)
         {
-            vorgaengerFenster.Visibility = Visibility.Visible;
+            
             Close();
+        }
+
+        private void FensterGeschlossen(object sender, EventArgs e)
+        {
+            vorgaengerFenster.Visibility = Visibility.Visible;
         }
     }
 }

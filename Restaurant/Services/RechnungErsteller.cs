@@ -9,11 +9,16 @@ using System.Windows.Media;
 using System.Windows;
 using System.Xml.Serialization;
 using System.IO;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Diagnostics;
 
 namespace Restaurant.Services
 {
     class RechnungErsteller
     {
+
+        
 
         public static Rechnung ErstelleRechnung(double Betrag ,double trinkgeld, int personalNummer)
         {
@@ -26,27 +31,27 @@ namespace Restaurant.Services
             return ZuErstellendeRechnung;
         }
         public static String RechnungDateiErsteller(String RechnungsNummer, double rechnungsTotalBetrag, double rechnungsTrinkgeldBetrag, Mitarbeiter mitarbeiter, List<Bestellung> bestellungs) {
-            String rechnungHeader = "<!DOCTYPE html><html><title>Rechnung</title><body><h1 style=\"text-align: left;\"><strong>&nbsp; &nbsp; &nbsp; Restaurantname </strong>" +
-                    "</h1><p style=\"text-align: left;\">  40724 Hilden - Am Holterköpchen 34 </p>" +
-                    "<p style=\"text-align: left;\"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Telefon: 02373 - 1234 </p>" +
-                    "<p style=\"text-align: left;\"> ************************************</p>" +
-                    "<h2 style=\"text-align: left;\"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Rechnung NR.</h2>" +
-                    "<p style=\"text-align: left;\"> &nbsp;  " + RechnungsNummer + "</p>"+
-                    "<p style=\"text-align: left;\">====================================</p>";
+            String rechnungHeader = "<!DOCTYPE html><html><title>Rechnung</title><body><h1 style=\"text-align: center;\"><strong>Restaurantname </strong>" +
+                    "</h1><p style=\"text-align: center;\">  40724 Hilden - Am Holterköpchen 34 </p>" +
+                    "<p style=\"text-align: center;\"> Telefon: 02373 - 1234 </p>" +
+                    "<p style=\"text-align: center;\"> ************************************</p>" +
+                    "<h2 style=\"text-align: center;\"> Rechnung NR.</h2>" +
+                    "<p style=\"text-align: center;\"> " + RechnungsNummer + "</p>"+
+                    "<p style=\"text-align: center;\">====================================</p>";
             String rechnungKoerper = null;
             for (int i = 0;i < bestellungs.Count; ++i)
             {
-                rechnungKoerper += "<p style=\"text-align: left;\"> " + bestellungs[i].KartenElement.ElemName +"   "+ bestellungs[i].KartenElement.Preis + "€ </p>" +
-                    "<p style=\"text-align: left;\" > ------------------------------------</p>";
+                rechnungKoerper += "<p style=\"text-align: center;\"> " + bestellungs[i].KartenElement.ElemName +"   "+ bestellungs[i].KartenElement.Preis + "€ </p>" +
+                    "<p style=\"text-align: center;\" > ------------------------------------</p>";
             }
 
             
-            String rechnungsFuß = "<p style=\"text-align: left;\" >====================================</p>" +
-                    "<p style=\"text-align: left;\"> Tolal "+ rechnungsTotalBetrag + "€</p>" +
-                    "<p style=\"text-align: left;\"> Trinkgeld: "+ rechnungsTrinkgeldBetrag + "€</p>" +
-                    "<h2 style=\"text-align: left;\"> Bar: "+(rechnungsTotalBetrag+rechnungsTrinkgeldBetrag)+"€</h2>"+
-                    "<p>  Es bediente Sie "+mitarbeiter.nachname+"</p>" +
-                    "<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Vielen Dank</p></body></html>";
+            String rechnungsFuß = "<p style=\"text-align: center;\" >====================================</p>" +
+                    "<p style=\"text-align: center;\"> Tolal " + rechnungsTotalBetrag + "€</p>" +
+                    "<p style=\"text-align: center;\"> Trinkgeld: " + rechnungsTrinkgeldBetrag + "€</p>" +
+                    "<h2 style=\"text-align: center;\"> Bar: " + (rechnungsTotalBetrag+rechnungsTrinkgeldBetrag)+"€</h2>"+
+                    "<p style=\"text-align: center;\">  Es bediente Sie " + mitarbeiter.nachname+"</p>" +
+                    "<p style=\"text-align: center;\"> Vielen Dank</p></body></html>";
 
 
             return rechnungHeader + rechnungKoerper + rechnungsFuß;
@@ -60,7 +65,7 @@ namespace Restaurant.Services
         }
 
 
-
+        
 
 
     }

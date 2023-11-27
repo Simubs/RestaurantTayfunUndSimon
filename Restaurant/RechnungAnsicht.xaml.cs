@@ -2,6 +2,7 @@
 using Restaurant.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,7 +62,8 @@ namespace Restaurant
 
         private void zurueckButton_Click(object sender, RoutedEventArgs e)
         {
-            vorgaengerFenster.Visibility = Visibility.Visible;
+            
+            
             Close();
         }
 
@@ -173,6 +175,51 @@ namespace Restaurant
             AusgewaehlteBestellungenDataGrid.ItemsSource = null;
             AusgewaehlteBestellungenDataGrid.ItemsSource = rechnungBestellungs;
             betragBerechnen(ausgewaehlteBestellung, false);
+        }
+
+        private void BezahlenDruckenButton_Click(object sender, RoutedEventArgs e)
+        {
+            Rechnung rechnung = RechnungErsteller.ErstelleRechnung(zuZahlenderBetrag, trinkgeldBetrag, eingelogterMitarbeiter.mitarbeiternummer);
+            datenbankservice.erstelleRechnung(rechnung);
+            if (rechnung != null)
+            {
+                for (int i = 0; i < rechnungBestellungs.Count; i++)
+                {
+                    rechnungBestellungs[i].RechnungNr = rechnung.RechnungNr;
+                    datenbankservice.SpeichernBestellung(rechnungBestellungs[i]);
+
+                }
+                AusgewaehlteBestellungenDataGrid.ItemsSource = null;
+                String ausgabe = RechnungErsteller.RechnungDateiErsteller(rechnung.RechnungNr, rechnung.RechnungBetrag, rechnung.Trinkgeld, eingelogterMitarbeiter, rechnungBestellungs);
+                RechnungErsteller.ausgabeRechnung(ausgabe, rechnung.RechnungNr);
+                PrintDoc(ausgabe,rechnung);
+                
+                rechnungBestellungs = new List<Bestellung>();
+                zuZahlenderBetrag = 0;
+                trinkgeldBetrag = 0;
+            }
+            else
+            {
+                throw new Exception("Es konnte Keine Rechnung erstellt werden!");
+            }
+            
+        }
+        private void PrintDoc(string doc, Rechnung rechnung)
+        {
+            Process printjob = new Process();
+            printjob.StartInfo.FileName = Constants.Constants.RECHNUNG_DATEI_PFAD + rechnung.RechnungNr + ".html";
+            printjob.StartInfo.UseShellExecute = true;
+            printjob.StartInfo.Verb = "print";
+            printjob.StartInfo.CreateNoWindow = true;
+            printjob.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+
+            printjob.Start();
+
+        }
+
+        private void FensterGeschlossen(object sender, EventArgs e)
+        {
+            vorgaengerFenster.Visibility = Visibility.Visible;
         }
     }
 }

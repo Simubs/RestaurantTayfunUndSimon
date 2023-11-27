@@ -67,7 +67,7 @@ namespace Restaurant.Services
 
                 reader.Read();
 
-                kartenelement= new KartenElement(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3));
+                kartenelement= new KartenElement(reader.GetInt32(0), reader.GetString(1), reader.GetDouble(2), reader.GetInt32(3));
 
                 
                 reader.Close();
@@ -249,8 +249,8 @@ namespace Restaurant.Services
                 OleDbCommand command = dataConnection.CreateCommand();
                 command.Connection = dataConnection;
                 
-
-                command.CommandText = "UPDATE BESTELLUNGEN SET TISCH_NR = " + neuerTisch.tischNr + " WHERE TISCH_NR=" + vorherigerTisch.tischNr + ";";
+                
+                command.CommandText = "UPDATE BESTELLUNGEN SET TISCH_NR = " + neuerTisch.tischNr + " WHERE TISCH_NR=" + vorherigerTisch.tischNr + " AND RECHNUNGS_NR = '0';";
 
                 
                 command.ExecuteNonQuery();
@@ -306,7 +306,7 @@ namespace Restaurant.Services
                 OleDbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    TagesUmsatz = reader.GetDouble(0);
+                    TagesUmsatz =reader.GetDouble(0);
                 }
                 reader.Close();
 
@@ -317,7 +317,7 @@ namespace Restaurant.Services
             }
 
 
-            return TagesUmsatz;
+            return Double.IsNaN(TagesUmsatz)?0:TagesUmsatz;
         }
 
         internal List<Mitarbeiter> ermittelnAlleMitarbeiterMitTrinkgeld(DateTime datum)

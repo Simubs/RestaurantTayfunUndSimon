@@ -6,7 +6,7 @@
         xmlns:constants="clr-namespace:Restaurant.Constants"
         mc:Ignorable="d"
         Background="#FF4545F5"
-        Title="RechnungAnsicht" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+        Title="RechnungAnsicht" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closed="FensterGeschlossen" >
     <Grid>
         <Label x:Name="Titel" Content="Rechnungen" HorizontalAlignment="Left" Height="41" Margin="18,17,0,0" VerticalAlignment="Top" Width="302" FontSize="18" FontWeight="Bold" Foreground="White"/>
         <DataGrid x:Name="OffeneBestellungenDataGrid" HorizontalAlignment="Left" Height="323" Margin="18,88,0,0" VerticalAlignment="Top" Width="281" IsReadOnly="True" AutoGenerateColumns="False">
@@ -23,7 +23,7 @@
                 <DataGridTextColumn Header="Hinweise" Binding="{Binding Hinweise}" Width="72"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="BezahlenButton" Content="Bezahlen" HorizontalAlignment="Left" Height="106" Margin="645,305,0,0" VerticalAlignment="Top" Width="145" Click="BezahlenButton_Click"/>
+        <Button x:Name="BezahlenButton" Content="Bezahlen" HorizontalAlignment="Left" Height="47" Margin="645,305,0,0" VerticalAlignment="Top" Width="145" Click="BezahlenButton_Click"/>
         <Label x:Name="TrinkgeldLabel" Content="0 €" HorizontalAlignment="Left" Height="42" Margin="645,175,0,0" VerticalAlignment="Top" Width="145" IsEnabled="False" Background="Gray" FontSize="20" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <CheckBox x:Name="zehnCheckBox1" Content="10%" HorizontalAlignment="Left" Height="20" Margin="655,102,0,0" VerticalAlignment="Top" Width="85" Checked="zehnCheckBox_Checked"/>
         <CheckBox x:Name="fuenfzehnCheckBox" Content="15%" HorizontalAlignment="Left" Height="21" Margin="655,127,0,0" VerticalAlignment="Top" Width="85" IsChecked="True" Checked="fuenfzehnCheckBox_Checked"/>
@@ -34,5 +34,7 @@
         <Label x:Name="BetragLabel" Content="0 €" HorizontalAlignment="Left" Height="44" Margin="645,255,0,0" VerticalAlignment="Top" Width="145" IsEnabled="False" Background="Gray" FontSize="20" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.503,0.501"/>
         <Label Content="Trinkgeld" HorizontalAlignment="Left" Height="34" Margin="645,68,0,0" VerticalAlignment="Top" Width="145" FontWeight="Bold" FontSize="14" Foreground="White"/>
         <Label Content="Zu zahlender Betrag" HorizontalAlignment="Left" Height="34" Margin="645,221,0,0" VerticalAlignment="Top" Width="145" FontWeight="Bold" FontSize="14" Foreground="White"/>
+        <Button x:Name="BezahlenDruckButton" Content="Bezahlen und Drucken" HorizontalAlignment="Left" Height="52" Margin="645,357,0,0" VerticalAlignment="Top" Width="145" Click="BezahlenDruckenButton_Click"/>
+        <WebBrowser x:Name="WebBrowser" Visibility="Hidden"/>
     </Grid>
 </Window>

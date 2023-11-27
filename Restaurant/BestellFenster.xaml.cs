@@ -29,7 +29,7 @@ namespace Restaurant
         private List<KartenElement> kartenElements = new List<KartenElement>();
 
         private Datenbankservice datenbankservice = new Datenbankservice();
-        private Tischauswahl vorherigesFenster;
+        public Tischauswahl vorherigesFenster;
         private Tisch ausgewaehlterTisch;
         Mitarbeiter eingelogterMitarbeiter;
 
@@ -101,7 +101,7 @@ namespace Restaurant
 
         private void zurueck_Click(object sender, RoutedEventArgs e)
         {
-            vorherigesFenster.Visibility = Visibility.Visible;
+           
             Close();
         }
 
@@ -121,12 +121,18 @@ namespace Restaurant
 
         }
 
-        private void TischWechselnButton_Click(object sender, RoutedEventArgs e)
+        public void aktualisieren()
+        {
+            bestellungs = new List<Bestellung>();
+        }
+
+        private async void TischWechselnButton_Click(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < bestellungs.Count; i++)
             {
                 datenbankservice.SpeichernBestellung(bestellungs[i]);
             }
+            await Task.Delay(1000);
             TischUebergabeFenster tischUebergabeFenster = new TischUebergabeFenster(this,ausgewaehlterTisch);
             tischUebergabeFenster.Show();
             fuellenBestellungen();
@@ -146,6 +152,11 @@ namespace Restaurant
             Visibility = Visibility.Hidden;
             rechnungAnsicht.Show();
 
+        }
+
+        private void FensterGeschlossen(object sender, EventArgs e)
+        {
+            vorherigesFenster.Visibility = Visibility.Visible;
         }
     }
 }

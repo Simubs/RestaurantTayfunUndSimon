@@ -108,7 +108,7 @@ namespace Restaurant
 
         private void DatumGeaendert(object sender, SelectionChangedEventArgs e)
         {
-            ausgewaehltesDatum = DatumPicker.DisplayDate;
+            ausgewaehltesDatum = DatumPicker.SelectedDate.Value;
             aktualisieren();
         }
     }

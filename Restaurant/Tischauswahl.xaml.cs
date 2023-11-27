@@ -114,8 +114,8 @@ namespace Restaurant
 
         private void clickLogOutButton(object sender, RoutedEventArgs e)
         {
-            Visibility = Visibility.Hidden;
-            vorgaengerFenster.Visibility = Visibility.Visible;
+            
+            
             Close();
         }
 
@@ -315,6 +315,11 @@ namespace Restaurant
             UmsatzuebersichtFenster umsatzuebersichtFenster = new UmsatzuebersichtFenster(this,eingelogterMitarbeiter);
             umsatzuebersichtFenster.Show();
 
+        }
+
+        private void FensterGeschlossen(object sender, EventArgs e)
+        {
+            vorgaengerFenster.Visibility = Visibility.Visible;
         }
     }
 }

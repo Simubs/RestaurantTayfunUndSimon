@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant"
         mc:Ignorable="d"
-        Title="Tischauswahl" Height="524" Width="911" Background="#FF8D8D90" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Bilder\Restaurant-Logo.png">
+        Title="Tischauswahl" Height="524" Width="911" Background="#FF8D8D90" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Bilder\Restaurant-Logo.png" Closed="FensterGeschlossen">
     <Grid Margin="0,0,0,2">
 
         <Button x:Name="LogOutButton" Content="LogOut" HorizontalAlignment="Left" Height="32" Margin="779,10,0,0" VerticalAlignment="Top" Width="122" Click="clickLogOutButton" Grid.ColumnSpan="2"/>

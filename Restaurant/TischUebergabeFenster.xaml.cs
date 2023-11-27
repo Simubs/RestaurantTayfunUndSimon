@@ -271,20 +271,24 @@ namespace Restaurant
             tischeAuswaehlen();
         }
 
-        private void aenderungTischAuswahl(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void TischauswahlButton_Click(object sender, RoutedEventArgs e)
         {
 
             if(ausgewaelterTisch != null)
             {
                 
-                if(datenbankservice.uebergebeTisch(vorherigerTisch, ausgewaelterTisch)) { Close(); }
+                if(datenbankservice.uebergebeTisch(vorherigerTisch, ausgewaelterTisch)) { 
+                    vorgaengerFenster.vorherigesFenster.Visibility = Visibility.Visible;
+                    vorgaengerFenster.Close(); 
+                    Close(); 
+                }
 
             }
+
+        }
+
+        private void FensterGeschlossen(object sender, EventArgs e)
+        {
 
         }
     }
