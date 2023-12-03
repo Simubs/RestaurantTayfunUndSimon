@@ -19,9 +19,9 @@ namespace Restaurant
     /// <summary>
     /// Interaktionslogik für UmsatzuebersichtFenster.xaml
     /// </summary>
-    public partial class UmsatzuebersichtFenster : Window
+    public partial class UmsatzuebersichtFenster : UserControl
     {
-        private Window vorherigesFenster;
+        private UserControl vorherigesFenster;
         private Mitarbeiter eingelogterMitarbeiter;
 
         private double UmsatzDieserTag;
@@ -34,7 +34,7 @@ namespace Restaurant
 
         private DateTime ausgewaehltesDatum = DateTime.Today;
 
-        public UmsatzuebersichtFenster(Window vorherigesFenster,Mitarbeiter eingelogterMitarbeiter)
+        public UmsatzuebersichtFenster(UserControl vorherigesFenster,Mitarbeiter eingelogterMitarbeiter)
         {
             InitializeComponent();
             // Coloring using Constants
@@ -55,7 +55,6 @@ namespace Restaurant
 
         private void ZurueckButton_Click(object sender, RoutedEventArgs e)
         {
-            Close();
         }
 
         private void aktualisieren()

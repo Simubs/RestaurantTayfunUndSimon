@@ -20,7 +20,7 @@ namespace Restaurant
     /// <summary>
     /// Interaktionslogik für TischUebergabeFenster.xaml
     /// </summary>
-    public partial class TischUebergabeFenster : Window
+    public partial class TischUebergabeFenster : UserControl
     {
 
         private BestellFenster vorgaengerFenster;
@@ -81,7 +81,6 @@ namespace Restaurant
         private void zurueckButton(object sender, RoutedEventArgs e)
         {
             vorgaengerFenster.fuellenBestellungen();
-            Close();
         }
 
         private void Tisch1_Click(object sender, RoutedEventArgs e)
@@ -279,8 +278,8 @@ namespace Restaurant
                 
                 if(datenbankservice.uebergebeTisch(vorherigerTisch, ausgewaelterTisch)) { 
                     vorgaengerFenster.vorherigesFenster.Visibility = Visibility.Visible;
-                    vorgaengerFenster.Close(); 
-                    Close(); 
+                    //vorgaengerFenster.Close(); 
+                    //Close(); 
                 }
 
             }

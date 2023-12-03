@@ -1,4 +1,4 @@
-﻿<Window
+﻿<UserControl
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Restaurant"
         xmlns:Entitys="clr-namespace:Restaurant.Entitys" x:Class="Restaurant.BestellFenster"
         mc:Ignorable="d"
-        Title="BestellFenster" Height="450" Width="800" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Closed="FensterGeschlossen">
+        Height="450" Width="800" >
     <Grid>
         <Button x:Name="zurueck" Content="Zurück" HorizontalAlignment="Left" Height="33" Margin="678,10,0,0" VerticalAlignment="Top" Width="112" Click="zurueck_Click"/>
         <Button x:Name="TischWechselnButton" Content="Tisch übergeben" HorizontalAlignment="Left" Height="82" Margin="664,217,0,0" VerticalAlignment="Top" Width="126" Click="TischWechselnButton_Click"/>
@@ -33,4 +33,4 @@
         <ComboBox x:Name="ElementArtAuswahlComboBox" HorizontalAlignment="Left" Height="29" Margin="23,48,0,0" VerticalAlignment="Top" Width="416" IsSynchronizedWithCurrentItem="False" SelectionChanged="KartenElementArtGeändert"/>
 
     </Grid>
-</Window>
+</UserControl>

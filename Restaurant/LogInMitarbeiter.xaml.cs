@@ -20,7 +20,7 @@ namespace Restaurant
     /// <summary>
     /// Interaktionslogik für LogInMitarbeiter.xaml
     /// </summary>
-    public partial class LogInMitarbeiter : Window
+    public partial class LogInMitarbeiter : UserControl
     {
         String connectionString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + RunConfigurationVariables.PATH_TO_DATABASE_DYNAMIC;
         OleDbConnection dataConnection;
@@ -39,6 +39,7 @@ namespace Restaurant
                 ByPassLoginButton.Click += ByPassButtonClicked;
                 ByPassLoginButton.HorizontalAlignment = HorizontalAlignment.Right;
                 ByPassLoginButton.VerticalAlignment = VerticalAlignment.Bottom;
+                ByPassLoginButton.Height = 50;
                 MainGrid.Children.Add(ByPassLoginButton);
 
 
@@ -53,9 +54,14 @@ namespace Restaurant
 
         private void goToTischAuswahl(Mitarbeiter gefundenerMitarbeiter)
         {
+            //Tischauswahl tischauswahl = new Tischauswahl(this, gefundenerMitarbeiter);
+            //Visibility = Visibility.Hidden;
+            //tischauswahl.ShowDialog();
+
+            var mainWindow = MainWindow.Instance;
             Tischauswahl tischauswahl = new Tischauswahl(this, gefundenerMitarbeiter);
-            Visibility = Visibility.Hidden;
-            tischauswahl.ShowDialog();
+            mainWindow.changeContent(tischauswahl);
+
             
         }
 
@@ -129,13 +135,20 @@ namespace Restaurant
 
         private void clickZurueckButton(object sender, RoutedEventArgs e)
         {
-            
-            Close();
+            var mainWindow = MainWindow.Instance;
+            if(mainWindow != null)
+            {
+                mainWindow.changeContent(vorgaengerFenster);
+            }
         }
 
         private void FensterGeschlossen(object sender, EventArgs e)
         {
-            vorgaengerFenster.Visibility = Visibility.Visible;
+            var mainWindow = MainWindow.Instance;
+            if (mainWindow != null)
+            {
+                mainWindow.changeContent(vorgaengerFenster);
+            }
         }
     }
 }

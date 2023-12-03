@@ -67,6 +67,9 @@
     <Compile Include="LogInMitarbeiter.xaml.cs">
       <DependentUpon>LogInMitarbeiter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RechnungAnsicht.xaml.cs">
       <DependentUpon>RechnungAnsicht.xaml</DependentUpon>
     </Compile>
@@ -94,6 +97,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="LogInMitarbeiter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

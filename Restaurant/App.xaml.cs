@@ -8,6 +8,7 @@ using System.Windows;
 
 namespace Restaurant
 {
+
     /// <summary>
     /// Interaktionslogik für "App.xaml"
     /// </summary>

@@ -13,5 +13,11 @@ namespace Restaurant.Constants
         public static readonly string DEFAULT_BACKGROUND_COLOR_AS_STRING = "#FF4545F5";
         public const string RECHNUNG_DATEI_PFAD = @"..\..\Rechnungen\";
         public const string FALSCHE_EINGABEN_FEHLERMELDUNG = "Bitte überprüfen Sie Ihre Eingaben.";
+
+        public const int STANDARD_HOEHE = 480;
+        public const int STANDARD_BREITE = 800;
+
+        public const string STANDARD_HOEHESTRING = "480";
+        public const string STANDARD_BREITESTRING= "800";
     }
 }

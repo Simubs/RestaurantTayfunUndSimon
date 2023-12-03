@@ -20,7 +20,7 @@ namespace Restaurant
     /// <summary>
     /// Interaktionslogik für RechnungAnsicht.xaml
     /// </summary>
-    public partial class RechnungAnsicht : Window
+    public partial class RechnungAnsicht : UserControl
     {
 
         private List<Bestellung> offeneBestellungs = new List<Bestellung>();
@@ -63,8 +63,6 @@ namespace Restaurant
         private void zurueckButton_Click(object sender, RoutedEventArgs e)
         {
             
-            
-            Close();
         }
 
         private void BezahlenButton_Click(object sender, RoutedEventArgs e)

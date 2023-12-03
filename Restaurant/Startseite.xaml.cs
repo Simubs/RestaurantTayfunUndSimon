@@ -17,7 +17,7 @@ namespace Restaurant
     /// <summary>
     /// Interaktionslogik für Startseite.xaml
     /// </summary>
-    public partial class Startseite : Window
+    public partial class Startseite : UserControl
     {
         public Startseite()
         {
@@ -47,8 +47,13 @@ namespace Restaurant
         private void clickMitarbeiteransichtButton(object sender, RoutedEventArgs e)
         {
             LogInMitarbeiter logInFenster = new LogInMitarbeiter(this);
-            Visibility = Visibility.Hidden;
-            logInFenster.Show();
+
+            var mainWindow = MainWindow.Instance;
+            mainWindow.changeContent(logInFenster);
+            
+            //Visibility = Visibility.Hidden;
+            //logInFenster.Show();
+
 
         }
 
