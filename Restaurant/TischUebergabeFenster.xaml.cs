@@ -81,6 +81,7 @@ namespace Restaurant
         private void zurueckButton(object sender, RoutedEventArgs e)
         {
             vorgaengerFenster.fuellenBestellungen();
+            MainWindow.Instance.changeContent(vorgaengerFenster);
         }
 
         private void Tisch1_Click(object sender, RoutedEventArgs e)
@@ -276,10 +277,8 @@ namespace Restaurant
             if(ausgewaelterTisch != null)
             {
                 
-                if(datenbankservice.uebergebeTisch(vorherigerTisch, ausgewaelterTisch)) { 
-                    vorgaengerFenster.vorherigesFenster.Visibility = Visibility.Visible;
-                    //vorgaengerFenster.Close(); 
-                    //Close(); 
+                if(datenbankservice.uebergebeTisch(vorherigerTisch, ausgewaelterTisch)) {
+                    MainWindow.Instance.changeContent(vorgaengerFenster.vorherigesFenster);
                 }
 
             }

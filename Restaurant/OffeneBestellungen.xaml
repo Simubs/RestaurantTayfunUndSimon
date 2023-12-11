@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Restaurant.OffeneBestellungen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restaurant"
+        mc:Ignorable="d"
+        Height="450" Width="800">
+    <Grid>
+        <TabControl x:Name="reiterTabControl" SelectionChanged="reiterGewechselt">
+            <TabItem Header="Bar">
+                <DataGrid AutoGenerateColumns="False" Name="barDataGrid" CellEditEnding="barDataGridZeileGeaendert">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" IsReadOnly="True" Binding="{Binding KartenElement.ElemName}" />
+                        <DataGridTextColumn Header="Hinweise" IsReadOnly="True" Binding="{Binding Hinweise}" />
+                        <DataGridCheckBoxColumn Header="Fertig" Binding="{Binding Erledigt}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Küche">
+                <DataGrid AutoGenerateColumns="False" Name="kuecheDataGrid" CellEditEnding="kuecheDataGridGeaendert">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" IsReadOnly="True" Binding="{Binding KartenElement.ElemName}" />
+                        <DataGridTextColumn Header="Hinweise" IsReadOnly="True" Binding="{Binding Hinweise}" />
+                        <DataGridCheckBoxColumn Header="Fertig" Binding="{Binding Erledigt}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+
+        <Button x:Name="zurueck" Content="Zurück" Width="88" Height="22" HorizontalAlignment="Right" VerticalAlignment="Top" Click="zurueck_Click"/>
+    </Grid>
+</UserControl>

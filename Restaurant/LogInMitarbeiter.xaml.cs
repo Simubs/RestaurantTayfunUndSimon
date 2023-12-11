@@ -135,11 +135,9 @@ namespace Restaurant
 
         private void clickZurueckButton(object sender, RoutedEventArgs e)
         {
-            var mainWindow = MainWindow.Instance;
-            if(mainWindow != null)
-            {
-                mainWindow.changeContent(vorgaengerFenster);
-            }
+            
+                MainWindow.Instance.changeContent(vorgaengerFenster);
+            
         }
 
         private void FensterGeschlossen(object sender, EventArgs e)

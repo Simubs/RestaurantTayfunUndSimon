@@ -62,7 +62,7 @@ namespace Restaurant
 
         private void zurueckButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainWindow.Instance.changeContent(vorgaengerFenster);
         }
 
         private void BezahlenButton_Click(object sender, RoutedEventArgs e)
@@ -79,7 +79,7 @@ namespace Restaurant
                     
                 }
                 AusgewaehlteBestellungenDataGrid.ItemsSource = null;
-                RechnungErsteller.ausgabeRechnung(RechnungErsteller.RechnungDateiErsteller(rechnung.RechnungNr,rechnung.RechnungBetrag,rechnung.Trinkgeld,eingelogterMitarbeiter, rechnungBestellungs), rechnung.RechnungNr);
+                RechnungErsteller.ausgabeRechnung(RechnungErsteller.RechnungHTMLDateiErsteller(rechnung.RechnungNr,rechnung.RechnungBetrag,rechnung.Trinkgeld,eingelogterMitarbeiter, rechnungBestellungs), rechnung.RechnungNr);
                 rechnungBestellungs = new List<Bestellung>();
                 zuZahlenderBetrag = 0;
                 trinkgeldBetrag = 0;
@@ -188,9 +188,9 @@ namespace Restaurant
 
                 }
                 AusgewaehlteBestellungenDataGrid.ItemsSource = null;
-                String ausgabe = RechnungErsteller.RechnungDateiErsteller(rechnung.RechnungNr, rechnung.RechnungBetrag, rechnung.Trinkgeld, eingelogterMitarbeiter, rechnungBestellungs);
+                String ausgabe = RechnungErsteller.RechnungHTMLDateiErsteller(rechnung.RechnungNr, rechnung.RechnungBetrag, rechnung.Trinkgeld, eingelogterMitarbeiter, rechnungBestellungs);
                 RechnungErsteller.ausgabeRechnung(ausgabe, rechnung.RechnungNr);
-                PrintDoc(ausgabe,rechnung);
+                DruckeString(RechnungErsteller.RechnungTextDateiErsteller(rechnung.RechnungNr, rechnung.RechnungBetrag, rechnung.Trinkgeld, eingelogterMitarbeiter, rechnungBestellungs));
                 
                 rechnungBestellungs = new List<Bestellung>();
                 zuZahlenderBetrag = 0;
@@ -202,17 +202,17 @@ namespace Restaurant
             }
             
         }
-        private void PrintDoc(string doc, Rechnung rechnung)
+        private void DruckeString(string text)
         {
-            Process printjob = new Process();
-            printjob.StartInfo.FileName = Constants.Constants.RECHNUNG_DATEI_PFAD + rechnung.RechnungNr + ".html";
-            printjob.StartInfo.UseShellExecute = true;
-            printjob.StartInfo.Verb = "print";
-            printjob.StartInfo.CreateNoWindow = true;
-            printjob.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            PrintDialog printDialog = new PrintDialog();
 
-            printjob.Start();
+            if (printDialog.ShowDialog() == true)
+            {
+                FlowDocument flowDocument = new FlowDocument(new Paragraph(new Run(text)));
+                IDocumentPaginatorSource paginatorSource = flowDocument;
 
+                printDialog.PrintDocument(paginatorSource.DocumentPaginator, "DruckeString");
+            }
         }
 
         private void FensterGeschlossen(object sender, EventArgs e)

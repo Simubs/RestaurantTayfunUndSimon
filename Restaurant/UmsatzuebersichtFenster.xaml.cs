@@ -55,6 +55,7 @@ namespace Restaurant
 
         private void ZurueckButton_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.Instance.changeContent(vorherigesFenster);
         }
 
         private void aktualisieren()

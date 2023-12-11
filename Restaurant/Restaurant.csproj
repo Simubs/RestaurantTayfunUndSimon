@@ -70,6 +70,9 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OffeneBestellungen.xaml.cs">
+      <DependentUpon>OffeneBestellungen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RechnungAnsicht.xaml.cs">
       <DependentUpon>RechnungAnsicht.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OffeneBestellungen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,7 +8,7 @@ namespace Restaurant.Entitys
 {
     public class Bestellung
     {
-        public Bestellung(int bestellNr, String rechnungNr,int TischNr ,KartenElement kartenElement, int kartenElementNr, string hinweise, DateTime AufgebenAm, bool erledigt,int GaesteNr)
+        public Bestellung(int bestellNr, String rechnungNr,int TischNr ,KartenElement kartenElement, int kartenElementNr, string hinweise, DateTime AufgebenAm, bool erledigt)
         {
             BestellNr = bestellNr;
             RechnungNr = rechnungNr;
@@ -18,14 +18,12 @@ namespace Restaurant.Entitys
             this.TischNr = TischNr;
             this.Erledigt = erledigt;  
             this.AufgegebenAm = AufgebenAm;
-            this.GaesteNr = GaesteNr;
         }
 
 
         public int BestellNr { get; set; }
         public String RechnungNr { get; set; }
         public int TischNr { get; set;}
-        public int GaesteNr { get; set; }
         public KartenElement KartenElement {get;set;}
         public int KartenElementNr { get;set;}
         public string Hinweise { get; set; }

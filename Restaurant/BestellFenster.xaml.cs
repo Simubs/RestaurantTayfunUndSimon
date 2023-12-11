@@ -76,7 +76,7 @@ namespace Restaurant
         private void HinzufuegenButton_Click(object sender, RoutedEventArgs e)
         {
             KartenElement ausgewaehltesElement = KartenElementeGridView.SelectedItem as KartenElement;
-            bestellungs.Add(new Bestellung(0, "0", ausgewaehlterTisch.tischNr,ausgewaehltesElement, ausgewaehltesElement.KartenElementNr,hinweiseTextBox.Text,DateTime.Now,false,0));
+            bestellungs.Add(new Bestellung(0, "0", ausgewaehlterTisch.tischNr,ausgewaehltesElement, ausgewaehltesElement.KartenElementNr,hinweiseTextBox.Text,DateTime.Now,false));
             BestellungenDataGrid.ItemsSource = null;
             BestellungenDataGrid.ItemsSource = bestellungs;
         }
@@ -101,7 +101,7 @@ namespace Restaurant
 
         private void zurueck_Click(object sender, RoutedEventArgs e)
         {
-           
+            MainWindow.Instance.changeContent(vorherigesFenster);
         }
 
 

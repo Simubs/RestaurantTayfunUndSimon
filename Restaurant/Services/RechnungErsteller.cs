@@ -30,7 +30,7 @@ namespace Restaurant.Services
             ZuErstellendeRechnung.Datum = DateTime.Today.ToLongDateString();
             return ZuErstellendeRechnung;
         }
-        public static String RechnungDateiErsteller(String RechnungsNummer, double rechnungsTotalBetrag, double rechnungsTrinkgeldBetrag, Mitarbeiter mitarbeiter, List<Bestellung> bestellungs) {
+        public static String RechnungHTMLDateiErsteller(String RechnungsNummer, double rechnungsTotalBetrag, double rechnungsTrinkgeldBetrag, Mitarbeiter mitarbeiter, List<Bestellung> bestellungs) {
             String rechnungHeader = "<!DOCTYPE html><html><title>Rechnung</title><body><h1 style=\"text-align: center;\"><strong>Restaurantname </strong>" +
                     "</h1><p style=\"text-align: center;\">  40724 Hilden - Am Holterköpchen 34 </p>" +
                     "<p style=\"text-align: center;\"> Telefon: 02373 - 1234 </p>" +
@@ -64,8 +64,35 @@ namespace Restaurant.Services
             File.WriteAllText( pfad, RechnungDatei);
         }
 
+        public static String RechnungTextDateiErsteller(String RechnungsNummer, double rechnungsTotalBetrag, double rechnungsTrinkgeldBetrag, Mitarbeiter mitarbeiter, List<Bestellung> bestellungs)
+        {
+            String rechnungHeader = "Rechnung \nHildens bestes Restaurant \n" +
+                    "40724 Hilden - Am Holterköpchen 34 \n" +
+                    "Telefon: 02373 - 1234" +
+                    "\n ************************************" +
+                    " \n Rechnung NR.\n"
+                     + RechnungsNummer +
+                    "\n====================================";
+            String rechnungKoerper = null;
+            for (int i = 0; i < bestellungs.Count; ++i)
+            {
+                rechnungKoerper += "\n" + bestellungs[i].KartenElement.ElemName + "   " + bestellungs[i].KartenElement.Preis + "€ " +
+                    "\n------------------------------------";
+            }
 
-        
+
+            String rechnungsFuß = "\n====================================" +
+                    "\nTolal " + rechnungsTotalBetrag + "€" +
+                    "\nTrinkgeld: " + rechnungsTrinkgeldBetrag + "€" +
+                    "\nBar: " + (rechnungsTotalBetrag + rechnungsTrinkgeldBetrag) + "€" +
+                    "\nEs bediente Sie " + mitarbeiter.nachname +
+                    "\n Vielen Dank";
+
+
+            return rechnungHeader + rechnungKoerper + rechnungsFuß;
+
+        }
+
 
 
     }

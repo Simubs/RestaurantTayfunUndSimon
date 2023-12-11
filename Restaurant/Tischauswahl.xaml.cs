@@ -41,13 +41,17 @@ namespace Restaurant
             abfrageTische();
             tischeAuswaehlen();
             dropdownBefuellen();
+            if(eingelogterMitarbeiter.taetigkeitsbereich == 1)
+            {
+                OffeneBestellungenButton.Visibility = Visibility.Hidden;
+            }
         }
 
         private void dropdownBefuellen()
         {
             for (int i = 1; i <= tische.Count; ++i)
             {
-                if (((Tisch)tische[i]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer)
+                if (((Tisch)tische[i]).mitarbeiternummer == eingelogterMitarbeiter.mitarbeiternummer || eingelogterMitarbeiter.taetigkeitsbereich==99)
                 {
                     Tischauswahl1.Items.Add(i);
                 }
@@ -114,9 +118,7 @@ namespace Restaurant
 
         private void clickLogOutButton(object sender, RoutedEventArgs e)
         {
-            
-            
-            //Close();
+            MainWindow.Instance.changeContent(vorgaengerFenster);
         }
 
         private void Tisch1_Click(object sender, RoutedEventArgs e)
@@ -326,6 +328,11 @@ namespace Restaurant
         private void FensterGeschlossen(object sender, EventArgs e)
         {
             vorgaengerFenster.Visibility = Visibility.Visible;
+        }
+
+        private void clickOffeneBestellungenButton(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Instance.changeContent(new OffeneBestellungen(eingelogterMitarbeiter, this));
         }
     }
 }

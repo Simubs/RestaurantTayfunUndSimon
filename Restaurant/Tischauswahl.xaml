@@ -41,6 +41,7 @@
         <Label Content="Anzahl Sitzplätze" HorizontalAlignment="Left" Height="31" Margin="780,179,0,0" VerticalAlignment="Top" Width="103" Grid.ColumnSpan="2"/>
         <Label Content="Tischkarte" HorizontalAlignment="Left" Height="41" Margin="18,17,0,0" VerticalAlignment="Top" Width="302" FontSize="18" FontWeight="Bold" Foreground="White"/>
         <Button x:Name="UmsatzuebersichtButton" Content="Umsatzübersicht" HorizontalAlignment="Left" Height="111" Margin="773,63,0,0" VerticalAlignment="Top" Width="128" Click="UmsatzuebersichtButton_Click"/>
+        <Button x:Name="OffeneBestellungenButton" Content="Offene Bestellungen" HorizontalAlignment="Left" Height="32" Margin="627,10,0,0" VerticalAlignment="Top" Width="122" Click="clickOffeneBestellungenButton"/>
 
 
     </Grid>

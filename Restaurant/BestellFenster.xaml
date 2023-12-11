@@ -15,9 +15,9 @@
         <Button x:Name="AbrechnenButton" Content="Abrechnen" HorizontalAlignment="Left" Height="29" Margin="456,48,0,0" VerticalAlignment="Top" Width="203" Click="AbrechnenButton_Click"/>
         <Label Content="Bestellfenster" HorizontalAlignment="Left" Height="33" Margin="23,10,0,0" VerticalAlignment="Top" Width="416" FontSize="16" FontWeight="Bold"/>
         <DataGrid x:Name="KartenElementeGridView" HorizontalAlignment="Left" Height="315" Margin="23,99,0,0" VerticalAlignment="Top" Width="285" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True">
-            <DataGrid.Columns >
-                <DataGridTextColumn Header="Name" Binding="{Binding ElemName}" Width="245"></DataGridTextColumn>
-                <DataGridTextColumn Header="Preis" Binding="{Binding Preis}" Width="40"></DataGridTextColumn>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding ElemName}" Width="225" CanUserResize="False"></DataGridTextColumn>
+                <DataGridTextColumn Header="Preis" Binding="{Binding Preis}" Width="60" CanUserResize="False"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="BestellungenDataGrid" HorizontalAlignment="Left" Height="315" Margin="360,99,0,0" VerticalAlignment="Top" Width="285" AutoGenerateColumns="False" >
