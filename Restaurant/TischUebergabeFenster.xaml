@@ -42,6 +42,7 @@
         <Slider x:Name="SitzplaetzeSlider" HorizontalAlignment="Left" Height="25" Margin="331,38,0,0" VerticalAlignment="Top" Width="386" Maximum="12" Minimum="1" ValueChanged="ValueGeaendertSlider" IsSnapToTickEnabled="True"/>
         <Label Content="Sitzplätze angeben" HorizontalAlignment="Left" Height="30" Margin="331,11,0,0" VerticalAlignment="Top" Width="382"/>
         <TextBlock x:Name="SitzplaetzeAnzahlTextFeld" HorizontalAlignment="Left" Height="20" Margin="722,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" IsEnabled="False"><Run Language="de-de" Text="0"/></TextBlock>
+        <Button x:Name="ZurueckButton" Content="Zurück" HorizontalAlignment="Left" Height="41" Margin="765,17,0,0" VerticalAlignment="Top" Width="136" Click="ZurueckButton_Click"/>
 
 
     </Grid>
