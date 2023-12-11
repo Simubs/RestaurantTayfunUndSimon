@@ -20,7 +20,7 @@ namespace Restaurant
     /// <summary>
     /// Interaktionslogik für BestellFenster.xaml
     /// </summary>
-    public partial class BestellFenster : Window
+    public partial class BestellFenster : UserControl
     {
 
         private List<Bestellung> bestellungs = new List<Bestellung>();
@@ -102,7 +102,6 @@ namespace Restaurant
         private void zurueck_Click(object sender, RoutedEventArgs e)
         {
            
-            Close();
         }
 
 
@@ -134,7 +133,8 @@ namespace Restaurant
             }
             await Task.Delay(1000);
             TischUebergabeFenster tischUebergabeFenster = new TischUebergabeFenster(this,ausgewaehlterTisch);
-            tischUebergabeFenster.Show();
+            //tischUebergabeFenster.Show();
+            MainWindow.Instance.changeContent(tischUebergabeFenster);
             fuellenBestellungen();
         }
 
@@ -149,8 +149,9 @@ namespace Restaurant
         private void AbrechnenButton_Click(object sender, RoutedEventArgs e)
         {
             RechnungAnsicht rechnungAnsicht = new RechnungAnsicht(this,ausgewaehlterTisch,eingelogterMitarbeiter);
-            Visibility = Visibility.Hidden;
-            rechnungAnsicht.Show();
+
+            MainWindow.Instance.changeContent(rechnungAnsicht);
+            //rechnungAnsicht.Show();
 
         }
 

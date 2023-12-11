@@ -20,7 +20,7 @@ namespace Restaurant
     /// <summary>
     /// Interaktionslogik für Tischauswahl.xaml
     /// </summary>
-    public partial class Tischauswahl : Window
+    public partial class Tischauswahl : UserControl
     {
         private LogInMitarbeiter vorgaengerFenster;
         private Mitarbeiter eingelogterMitarbeiter;
@@ -116,7 +116,7 @@ namespace Restaurant
         {
             
             
-            Close();
+            //Close();
         }
 
         private void Tisch1_Click(object sender, RoutedEventArgs e)
@@ -297,9 +297,11 @@ namespace Restaurant
 
         private void TischauswahlButton_Click(object sender, RoutedEventArgs e)
         {
-            BestellFenster bestellFenster = new BestellFenster(this, 1, ausgewaelterTisch,eingelogterMitarbeiter);
-            bestellFenster.Show();
-            this.Visibility = Visibility.Hidden;
+            //BestellFenster bestellFenster = new BestellFenster(this, 1, ausgewaelterTisch,eingelogterMitarbeiter);
+            //bestellFenster.Show();
+            //this.Visibility = Visibility.Hidden;
+            BestellFenster bestellFenster = new BestellFenster(this, 1, ausgewaelterTisch, eingelogterMitarbeiter);
+            MainWindow.Instance.changeContent(bestellFenster);
         }
 
     
@@ -312,8 +314,12 @@ namespace Restaurant
 
         private void UmsatzuebersichtButton_Click(object sender, RoutedEventArgs e)
         {
-            UmsatzuebersichtFenster umsatzuebersichtFenster = new UmsatzuebersichtFenster(this,eingelogterMitarbeiter);
-            umsatzuebersichtFenster.Show();
+            //UmsatzuebersichtFenster umsatzuebersichtFenster = new UmsatzuebersichtFenster(this,eingelogterMitarbeiter);
+            //umsatzuebersichtFenster.Show();
+            var mainWindow = MainWindow.Instance;
+            UmsatzuebersichtFenster umsatzuebersichtFenster = new UmsatzuebersichtFenster(this, eingelogterMitarbeiter);
+            mainWindow.changeContent(umsatzuebersichtFenster);
+
 
         }
 

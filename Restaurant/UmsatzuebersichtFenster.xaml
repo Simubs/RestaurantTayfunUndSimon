@@ -1,11 +1,11 @@
-﻿<Window x:Class="Restaurant.UmsatzuebersichtFenster"
+﻿<UserControl x:Class="Restaurant.UmsatzuebersichtFenster"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant"
         mc:Ignorable="d"
-        Title="UmsatzuebersichtFenster" Height="450" Width="800">
+         Height="450" Width="800">
     <Grid>
 
         <TextBlock x:Name="UmsatzTextBox" Text="0€" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="509,152,0,0" Width="250" Height="38" Foreground="Black" IsEnabled="False" FontSize="24"/>
@@ -35,4 +35,4 @@
 
     </Grid>
 
-</Window>
+</UserControl>

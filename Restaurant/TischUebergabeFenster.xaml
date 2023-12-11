@@ -1,11 +1,11 @@
-﻿<Window x:Class="Restaurant.TischUebergabeFenster"
+﻿<UserControl x:Class="Restaurant.TischUebergabeFenster"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant"
         mc:Ignorable="d"
-        Title="Tischauswahl" Height="524" Width="911" Background="#FF8D8D90" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Bilder\Restaurant-Logo.png">
+        Height="524" Width="911" Background="#FF8D8D90" >
     <Grid Margin="0,0,0,2">
 
         <!-- <Button x:Name="zurueckButton" Content="Zurück" HorizontalAlignment="Left" Height="32" Margin="779,10,0,0" VerticalAlignment="Top" Width="122" Click="zurueckButton" Grid.ColumnSpan="2"/> -->
@@ -45,4 +45,4 @@
 
 
     </Grid>
-</Window>
+</UserControl>
